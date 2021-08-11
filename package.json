@@ -26,6 +26,7 @@
     "@editorjs/simple-image": "^1.4.1",
     "@editorjs/table": "^2.0.1",
     "@editorjs/warning": "^1.2.0",
+    "open-graph-scraper": "^4.9.1",
     "react-editor-js": "^1.10.0"
   },
   "author": {

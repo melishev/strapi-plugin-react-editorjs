@@ -7,6 +7,14 @@
       "config": {
         "policies": []
       }
+    },
+    {
+      "method": "GET",
+      "path": "/link",
+      "handler": "editorjs.link",
+      "config": {
+        "policies": []
+      }
     }
   ]
 }

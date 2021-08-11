@@ -9,7 +9,7 @@ import Paragraph from '@editorjs/paragraph'
 import List from '@editorjs/list'
 import Warning from '@editorjs/warning'
 import Code from '@editorjs/code'
-// import LinkTool from '@editorjs/link'
+import LinkTool from '@editorjs/link'
 import Image from '@editorjs/image'
 import Raw from '@editorjs/raw'
 import Header from '@editorjs/header'
@@ -27,7 +27,12 @@ const editorTools = {
   list: List,
   warning: Warning,
   code: Code,
-  // linkTool: LinkTool,
+  linkTool: {
+    class: LinkTool,
+    config: {
+      endpoint: `${strapi.backendURL}/editorjs/link`,
+    },
+  },
   image: Image,
   raw: Raw,
   header: Header,
