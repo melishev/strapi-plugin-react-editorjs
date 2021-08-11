@@ -1,0 +1,61 @@
+{
+  "name": "strapi-plugin-editorjs",
+  "version": "0.0.1",
+  "description": "Plugin for Strapi Headless CMS, hiding the standard WYSIWYG editor on Editor.js",
+  "homepage": "https://github.com/melishev/strapi-plugin-editorjs#readme",
+  "strapi": {
+    "name": "EditorJS",
+    "icon": "plug",
+    "description": "Next generation block styled editor. Free. Use for pleasure."
+  },
+  "dependencies": {
+    "@editorjs/checklist": "^1.3.0",
+    "@editorjs/code": "^2.7.0",
+    "@editorjs/delimiter": "^1.2.0",
+    "@editorjs/editorjs": "^2.22.2",
+    "@editorjs/embed": "^2.4.6",
+    "@editorjs/header": "^2.6.1",
+    "@editorjs/image": "^2.6.0",
+    "@editorjs/inline-code": "^1.3.1",
+    "@editorjs/link": "^2.3.1",
+    "@editorjs/list": "^1.6.2",
+    "@editorjs/marker": "^1.2.2",
+    "@editorjs/paragraph": "^2.8.0",
+    "@editorjs/quote": "^2.4.0",
+    "@editorjs/raw": "^2.3.0",
+    "@editorjs/simple-image": "^1.4.1",
+    "@editorjs/table": "^2.0.1",
+    "@editorjs/warning": "^1.2.0",
+    "react-editor-js": "^1.10.0"
+  },
+  "author": {
+    "name": "Matvey Melishev",
+    "email": "matvey@melishev.ru",
+    "url": "https://melishev.ru"
+  },
+  "maintainers": [
+    {
+      "name": "Matvey Melishev",
+      "email": "matvey@melishev.ru",
+      "url": "https://melishev.ru"
+    }
+  ],
+  "engines": {
+    "node": ">=10.16.0 <=14.x.x",
+    "npm": ">=6.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/melishev/strapi-plugin-editorjs.git"
+  },
+  "bugs": {
+    "url": "https://github.com/melishev/strapi-plugin-editorjs/issues"
+  },
+  "keywords": [
+    "strapi",
+    "plugin",
+    "editor-js",
+    "wysiwyg"
+  ],
+  "license": "MIT"
+}
