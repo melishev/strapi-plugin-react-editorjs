@@ -1,4 +1,4 @@
-<img src="static/strapi-plugin-editorjs.png">
+<img src="./strapi-plugin-editorjs.png">
 <h1 style="width: 100%; text-align: center">strapi-plugins-editorjs</h1>
 
 ### 📝 Plugin for Strapi Headless CMS, hiding the standard WYSIWYG editor on Editor.js
@@ -11,8 +11,8 @@
 - [x] List
 - [x] Warning
 - [x] Code
-- [o] Link
-- [o] Image
+- [x] Link
+- [ ] Image
 - [x] Raw
 - [x] Header
 - [x] Quote
@@ -20,18 +20,14 @@
 - [x] CheckList
 - [x] Delimiter
 - [x] InlineCode
-- [o] SimpleImage
+- [ ] SimpleImage
 
 ## 🤟🏻 Getting Started
-
-### Install via npm (or yarn)
-
 ```bash
-yarn add strapi-plugin-editorjs
+yarn add @melishev/strapi-plugin-editorjs
 # or
-npm install strapi-plugin-editorjs
+npm install @melishev/strapi-plugin-editorjs
 ```
-
 ## 🛠 Need Help
 
 ### At the moment, of all the official plugins not working:
