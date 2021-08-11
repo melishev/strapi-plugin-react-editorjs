@@ -28,16 +28,16 @@ yarn add @melishev/strapi-plugin-editorjs
 # or
 npm install @melishev/strapi-plugin-editorjs
 ```
-### For the plugin to work correctly, you need to give public access to the plugin API, at the moment it is necessary for:
+For the plugin to work correctly, you need to give public access to the plugin API, at the moment it is necessary for:
 1. [Link](https://github.com/editor-js/link)
 #
 ## 🛠 Need Help
 
-### At the moment, of all the official plugins not working:
+At the moment, of all the official plugins not working:
 
 1. Image
 
-#### I need the help of more professional people in Strapi to properly implement these Editor.js plugins in conjunction with Strapi. If you know how you can solve this problem, please let me know, or create a pull request.
+I need the help of more professional people in Strapi to properly implement these Editor.js plugins in conjunction with Strapi. If you know how you can solve this problem, please let me know, or create a pull request.
 #
 ## ⭐️ Show your support
 
