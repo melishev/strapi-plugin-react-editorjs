@@ -2,14 +2,6 @@
   "routes": [
     {
       "method": "GET",
-      "path": "/",
-      "handler": "editorjs.index",
-      "config": {
-        "policies": []
-      }
-    },
-    {
-      "method": "GET",
       "path": "/link",
       "handler": "editorjs.link",
       "config": {
