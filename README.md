@@ -1,4 +1,4 @@
-<img src="./strapi-plugin-editorjs.png">
+<img src="./strapi-plugin-editor-js.png">
 
 # 🎛 Strapi + ✒️ Editor.js
 > ### Plugin for Strapi Headless CMS, hiding the standard WYSIWYG editor on Editor.js
@@ -24,9 +24,9 @@
 #
 ## 🤟🏻 Getting Started
 ```bash
-yarn add @melishev/strapi-plugin-editorjs
+yarn add strapi-plugin-editor-js
 # or
-npm install @melishev/strapi-plugin-editorjs
+npm install strapi-plugin-editor-js
 ```
 For the plugin to work correctly, you need to give public access to the plugin API, at the moment it is necessary for:
 1. [Link](https://github.com/editor-js/link)
