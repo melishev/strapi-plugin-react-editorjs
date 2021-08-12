@@ -7,6 +7,22 @@
       "config": {
         "policies": []
       }
+    },
+    {
+      "method": "POST",
+      "path": "/image/byFile",
+      "handler": "editorjs.byFile",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/image/byUrl",
+      "handler": "editorjs.byURL",
+      "config": {
+        "policies": []
+      }
     }
   ]
 }
