@@ -29,14 +29,15 @@ yarn add strapi-plugin-editor-js
 # or
 npm install strapi-plugin-editor-js
 ```
-For the plugin to work correctly, you need to give public access to the plugin API, at the moment it is necessary for:
-1. [Link](https://github.com/editor-js/link)
+For the plugin to work correctly, you need to give public and Authenticated role access to the plugin API, at the moment it is necessary for:
+1. [Link Tool](https://github.com/editor-js/link)
+2. [Image Tool](https://github.com/editor-js/image)
 #
 ## 🛠 Need Help
 
 1. [Image Tool](https://github.com/editor-js/image)
 
-🚸 At the moment, I have no idea how best to implement the Image Tool plugin. If you have an idea or experience in implementing such functionality, please do not hesitate to let me know about it.
+🚸 At the moment I do not have time to correctly implement the image loading module, you can see how it is implemented now and understand what the problem is. If you are ready to help me, then I am ready to explain and tell you what and how.
 #
 ## 👨🏻‍🏭 In developing
 

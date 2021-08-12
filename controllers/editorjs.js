@@ -23,6 +23,7 @@ module.exports = {
       })
     })
   },
+
   byFile: async (ctx) => {
     try {
       const { files } = parseMultipartData(ctx)
@@ -43,6 +44,7 @@ module.exports = {
       }, 500)
     }
   },
+
   byURL: async (ctx) => {
     try {
       const { url } = ctx.request.body;
