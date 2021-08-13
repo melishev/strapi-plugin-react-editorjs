@@ -38,7 +38,7 @@ const editorTools = {
   link: {
     class: Link,
     config: {
-      endpoint: `${strapi.backendURL}/editorjs/link`,
+      endpoint: `${strapi.backendURL}/${PluginId}/link`,
     },
   },
   image: {
