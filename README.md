@@ -1,7 +1,10 @@
-<img src="./strapi-plugin-editor-js.png">
+<img src="./assets/strapi-plugin-editorjs.png">
 
 # 🎛 Strapi + ✒️ Editor.js
 > ### Plugin for Strapi Headless CMS, hiding the standard WYSIWYG editor on Editor.js
+
+<img src="./assets/strapi-plugin-editorjs.gif">
+
 #
 ## 🍀 Supported official add-ons
 
