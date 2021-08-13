@@ -1,4 +1,5 @@
 import PluginId from '../../pluginId'
+
 // Plugins for Editor.js
 import Embed from '@editorjs/embed'
 import Table from '@editorjs/table'
@@ -34,7 +35,7 @@ const editorTools = {
     },
   },
   code: Code,
-  linkTool: {
+  link: {
     class: Link,
     config: {
       endpoint: `${strapi.backendURL}/editorjs/link`,

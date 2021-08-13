@@ -22,13 +22,24 @@ const Wysiwyg = ({
         fontFamily: 'Lato',
       }}
     >
-      <Label htmlFor={name} message={label} style={{ marginBottom: 10 }} />
-      <Editor name={name} onChange={onChange} value={value} />
+      <Label
+        htmlFor={name}
+        message={label}
+        style={{ marginBottom: 10 }}
+      />
+      <Editor
+        name={name}
+        onChange={onChange}
+        value={value}
+      />
       <InputDescription
         message={inputDescription}
         style={!isEmpty(inputDescription) ? { marginTop: '1.4rem' } : {}}
       />
-      <InputErrors errors={(!noErrorsDescription && errors) || []} name={name} />
+      <InputErrors
+        errors={(!noErrorsDescription && errors) || []}
+        name={name}
+      />
     </div>
   );
 };
