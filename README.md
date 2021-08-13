@@ -1,4 +1,6 @@
-<img src="https://github.com/melishev/strapi-plugin-editor-js/blob/main/assets/strapi-plugin-editorjs.png">
+<div align="center">
+    <img alt="Logo" src="https://github.com/melishev/strapi-plugin-editor-js/blob/main/assets/strapi-plugin-editorjs.png" width="400px">
+</div>
 
 # 🎛 Strapi + ✒️ Editor.js
 > #### Plugin for Strapi Headless CMS, hiding the standard WYSIWYG editor on Editor.js
@@ -38,7 +40,6 @@ npm install strapi-plugin-react-editorjs
 For the plugin to work correctly, you need to give public and Authenticated role access to the plugin API, at the moment it is necessary for:
 1. [Link Tool](https://github.com/editor-js/link)
 2. [Image Tool](https://github.com/editor-js/image)
-
 
 ## 👨🏻‍🏭 In developing
 
