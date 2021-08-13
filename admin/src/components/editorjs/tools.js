@@ -16,6 +16,7 @@ import CheckList from '@editorjs/checklist'
 import Delimiter from '@editorjs/delimiter'
 import InlineCode from '@editorjs/inline-code'
 
+console.log(PluginId)
 const editorTools = {
   embed: Embed,
   table: {
@@ -38,7 +39,7 @@ const editorTools = {
   link: {
     class: Link,
     config: {
-      endpoint: `${strapi.backendURL}/${PluginId}/link`,
+      endpoint: `/${PluginId}/link`,
     },
   },
   image: {
