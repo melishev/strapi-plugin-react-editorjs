@@ -27,6 +27,8 @@
 
 >  Note: the Image add-on cannot be reconfigured by you personally, this is due to some problems with the work of this add-on. You just better leave it alone.
 
+<img src="./assets/strapi-plugin-editorjs.gif">
+
 ## 🤟🏻 Getting Started
 ```bash
 yarn add strapi-plugin-react-editorjs
