@@ -29,9 +29,9 @@
 #
 ## 🤟🏻 Getting Started
 ```bash
-yarn add strapi-plugin-editor-js
+yarn add strapi-plugin-react-editorjs
 # or
-npm install strapi-plugin-editor-js
+npm install strapi-plugin-react-editorjs
 ```
 For the plugin to work correctly, you need to give public and Authenticated role access to the plugin API, at the moment it is necessary for:
 1. [Link Tool](https://github.com/editor-js/link)
