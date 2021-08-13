@@ -3,7 +3,7 @@
 # 🎛 Strapi + ✒️ Editor.js
 > ### Plugin for Strapi Headless CMS, hiding the standard WYSIWYG editor on Editor.js
 #
-## 🍀 Supported Official Plugin
+## 🍀 Supported official add-ons
 
 - [x] Paragraph Tool (default)
 - [x] [Embed Tool](https://github.com/editor-js/embed)
@@ -12,7 +12,7 @@
 - [x] [Warning Tool](https://github.com/editor-js/warning)
 - [x] [Code Tool](https://github.com/editor-js/code)
 - [x] [Link Tool](https://github.com/editor-js/link)
-- [ ] [Image Tool](https://github.com/editor-js/image)
+- [x] [Image Tool](https://github.com/editor-js/image)
 - [x] [Raw HTML Tool](https://github.com/editor-js/raw)
 - [x] [Heading Tool](https://github.com/editor-js/header)
 - [x] [Quote Tool](https://github.com/editor-js/quote)
@@ -22,6 +22,10 @@
 - [x] [InlineCode Tool](https://github.com/editor-js/inline-code)
 - [ ] [Personality Tool](https://github.com/editor-js/personality)
 - [ ] [Attaches Tool](https://github.com/editor-js/attaches)
+
+#### All of the above add-ons (if added) work initially when the plugin is loaded. You can also customize the add-ons available in your application using the instructions below.
+
+>  Note: the Image add-on cannot be reconfigured by you personally, this is due to some problems with the work of this add-on. You just better leave it alone.
 #
 ## 🤟🏻 Getting Started
 ```bash
