@@ -1,4 +1,4 @@
-<img src="./assets/strapi-plugin-editorjs.png">
+<img src="https://github.com/melishev/strapi-plugin-editor-js/blob/main/assets/strapi-plugin-editorjs.png">
 
 # 🎛 Strapi + ✒️ Editor.js
 > #### Plugin for Strapi Headless CMS, hiding the standard WYSIWYG editor on Editor.js
@@ -27,7 +27,7 @@
 
 >  Note: the Image add-on cannot be reconfigured by you personally, this is due to some problems with the work of this add-on. You just better leave it alone.
 
-<img src="./assets/strapi-plugin-editorjs.gif">
+<img src="https://github.com/melishev/strapi-plugin-editor-js/blob/main/assets/strapi-plugin-editorjs.gif">
 
 ## 🤟🏻 Getting Started
 ```bash
@@ -44,6 +44,7 @@ For the plugin to work correctly, you need to give public and Authenticated role
 
 1. [Personality Tool](https://github.com/editor-js/personality)
 2. [Attaches Tool](https://github.com/editor-js/attaches)
+3. Full screen mode
 
 🧐 These plugins will soon be officially supported, there will be a little wait.
 
