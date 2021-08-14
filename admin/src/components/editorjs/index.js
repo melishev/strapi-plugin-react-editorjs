@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 import EditorJs from 'react-editor-js';
 import EditorTools from './tools';
 
-import MediaLibAdapter from '../mediaLib/adapter'
-import MediaLibComponent from "../mediaLib/component";
-import {changeFunc, getToggleFunc} from "../mediaLib/utils";
+import MediaLibAdapter from '../medialib/adapter'
+import MediaLibComponent from '../medialib/component';
+import {changeFunc, getToggleFunc} from '../medialib/utils';
 
 const Editor = ({ onChange, name, value }) => {
 
