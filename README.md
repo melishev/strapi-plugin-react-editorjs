@@ -2,8 +2,14 @@
     <img alt="Logo" src="https://github.com/melishev/strapi-plugin-editor-js/blob/main/assets/strapi-plugin-editorjs.png" width="400px">
 </div>
 
-# 🎛 Strapi + ✒️ Editor.js
-> #### Plugin for Strapi Headless CMS, hiding the standard WYSIWYG editor on Editor.js
+<h1 align="center">🎛 Strapi + ✒️ Editor.js</h1>
+
+## 🙉 What's all the hullabaloo?
+#### This is a plugin for [Strapi Headless CMS](https://strapi.io) that replaces the standard wysiwyg editor with the cool [Editor.js](https://editorjs.io) and all its compatible add-ons.
+<br>
+
+<img src="https://github.com/melishev/strapi-plugin-editor-js/blob/main/assets/strapi-plugin-editorjs.gif">
+<br><br>
 
 ## 🍀 Supported official add-ons
 
@@ -25,11 +31,14 @@
 - [ ] [Personality Tool](https://github.com/editor-js/personality)
 - [ ] [Attaches Tool](https://github.com/editor-js/attaches)
 
+<br>
+
 #### All of the above add-ons (if added) work initially when the plugin is loaded. You can also customize the add-ons available in your application using the instructions below.
+<br>
 
 >  Note: the Image add-on cannot be reconfigured by you personally, this is due to some problems with the work of this add-on. You just better leave it alone.
 
-<img src="https://github.com/melishev/strapi-plugin-editor-js/blob/main/assets/strapi-plugin-editorjs.gif">
+<br>
 
 ## 🤟🏻 Getting Started
 ```bash
@@ -37,17 +46,19 @@ yarn add strapi-plugin-react-editorjs
 # or
 npm install strapi-plugin-react-editorjs
 ```
-For the plugin to work correctly, you need to give public and Authenticated role access to the plugin API, at the moment it is necessary for:
+For the plugin to work correctly, you need to give Public and Authenticated role access to the plugin API, at the moment it is necessary for:
 1. [Link Tool](https://github.com/editor-js/link)
 2. [Image Tool](https://github.com/editor-js/image)
 
-## 👨🏻‍🏭 In developing
+<br>
+
+## 👨🏻‍🏭 Developing
 
 1. [Personality Tool](https://github.com/editor-js/personality)
 2. [Attaches Tool](https://github.com/editor-js/attaches)
 3. Full screen mode
 
-🧐 These plugins will soon be officially supported, there will be a little wait.
+<br>
 
 ## ⭐️ Show your support
 
