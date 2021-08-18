@@ -4,7 +4,8 @@
 
 <h1 align="center">🎛 Strapi + ✒️ Editor.js</h1>
 
-## 🙉 What's all the hullabaloo?
+
+## 🙉 What it is?
 #### This is a plugin for [Strapi Headless CMS](https://strapi.io) that replaces the standard wysiwyg editor with the cool [Editor.js](https://editorjs.io) and all its compatible add-ons.
 <br>
 
