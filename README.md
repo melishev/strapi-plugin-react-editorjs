@@ -9,7 +9,7 @@
 <br>
 
 <img src="https://github.com/melishev/strapi-plugin-editor-js/blob/main/assets/strapi-plugin-editorjs.gif">
-<br><br>
+<br>
 
 ## 🍀 Supported official add-ons
 
@@ -34,7 +34,6 @@
 <br>
 
 #### All of the above add-ons (if added) work initially when the plugin is loaded. You can also customize the add-ons available in your application using the instructions below.
-<br>
 
 >  Note: the Image add-on cannot be reconfigured by you personally, this is due to some problems with the work of this add-on. You just better leave it alone.
 
