@@ -18,7 +18,6 @@ export const changeFunc = ({indexStateSetter, editor, data, index}) => {
     const newBlockType = "image";
     const newBlockData = {
       file: {
-        ...entry,
         url: entry.url.replace(window.location.origin, "")
       },
       caption: "",
