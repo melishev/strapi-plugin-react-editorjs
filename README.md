@@ -52,6 +52,24 @@ For the plugin to work correctly, you need to give Public and Authenticated role
 
 <br>
 
+## ⚙️ How to customize editor (optional)
+
+If you want to change the look of the editor or remove unused add-ons, you can add a custom Editor.js configuration to override the default settings:
+
+1. Go to your Strapi folder
+2. Copy template config file [`node_modules/strapi-plugin-react-editorjs/admin/src/config/customTools.js`](admin/src/config/customTools.js) to `extensions/react-editorjs/admin/src/config`
+3. Set up `extensions/react-editorjs/admin/src/config/customTools.js`
+4. Rebuild Strapi
+
+```bash
+yarn run build
+# or
+npm run build
+```
+### Please note that the add-ons are configured for Strapi, be careful when changing the configuration.
+
+<br>
+
 ## 👨🏻‍🏭 Developing
 
 1. [Personality Tool](https://github.com/editor-js/personality)

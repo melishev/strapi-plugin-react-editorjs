@@ -1,7 +1,8 @@
 import React, { useState, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import EditorJs from 'react-editor-js';
-import EditorTools from './tools';
+import requiredTools from './requiredTools';
+import customTools from '../../config/customTools';
 
 import MediaLibAdapter from '../medialib/adapter'
 import MediaLibComponent from '../medialib/component';
@@ -54,7 +55,7 @@ const Editor = ({ onChange, name, value }) => {
               onChange({target: {name, value: JSON.stringify(newData)}})
             }
           }}
-          tools={{...EditorTools, ...customImageTool}}
+          tools={{...requiredTools, ...customTools, ...customImageTool}}
           instanceRef={instance => setEditorInstance(instance)}
         />
       </div>

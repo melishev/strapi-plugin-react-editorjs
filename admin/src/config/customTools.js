@@ -1,13 +1,11 @@
-import PluginId from '../../pluginId'
+import PluginId from '../pluginId'
 
-// Plugins for Editor.js
 import Embed from '@editorjs/embed'
 import Table from '@editorjs/table'
 import List from '@editorjs/list'
 import Warning from '@editorjs/warning'
 import Code from '@editorjs/code'
 import Link from '@editorjs/link'
-import Image from '@editorjs/image'
 import Raw from '@editorjs/raw'
 import Header from '@editorjs/header'
 import Quote from '@editorjs/quote'
@@ -16,7 +14,7 @@ import CheckList from '@editorjs/checklist'
 import Delimiter from '@editorjs/delimiter'
 import InlineCode from '@editorjs/inline-code'
 
-const editorTools = {
+const customTools = {
   embed: Embed,
   table: {
     class: Table,
@@ -40,36 +38,6 @@ const editorTools = {
     config: {
       endpoint: `/${PluginId}/link`,
     },
-  },
-  image: {
-    class: Image,
-    config: {
-      field: "files.image",
-      additionalRequestData: {
-        data: JSON.stringify({})
-      },
-      additionalRequestHeaders: {
-        "Authorization": `Bearer ${JSON.parse(sessionStorage.getItem("jwtToken"))}`
-      },
-      endpoints: {
-        byUrl: `/${PluginId}/image/byUrl`,
-      },
-      uploader: {
-        async uploadByFile(file) {
-          const formData = new FormData();
-          formData.append("data", JSON.stringify({}));
-          formData.append("files.image", file);
-
-          const {data} = await axios.post(`/${PluginId}/image/byFile`, formData, {
-            headers: {
-              "Authorization": `Bearer ${JSON.parse(sessionStorage.getItem("jwtToken"))}`
-            }
-          });
-
-          return data
-        },
-      }
-    }
   },
   raw: {
     class: Raw,
@@ -99,4 +67,4 @@ const editorTools = {
   inlineCode: InlineCode,
 }
 
-export default editorTools
+export default customTools
