@@ -39,21 +39,25 @@ const Editor = ({ onChange, name, value }) => {
 
   return (
     <>
-      <EditorJs
-        data={JSON.parse(value)}
-        onReady={(api) => {
-          if(value) {
-            api.blocks.render(JSON.parse(value))
-          }
-          document.querySelector('[data-tool="image"]').remove()
-        }}
-        onChange={(api, newData) => {
-          onChange({ target: { name, value: JSON.stringify(newData) } })}
-        }
-        tools={{...EditorTools, ...customImageTool}}
-        instanceRef={instance => setEditorInstance(instance)}
-        style={{border: `1px solid red`}}
-      />
+      <div style={{ border: `1px solid rgb(227, 233, 243)`, borderRadius: `2px` }}>
+        <EditorJs
+          // data={JSON.parse(value)}
+          // enableReInitialize={true}
+          onReady={(api) => {
+            if(value && JSON.parse(value).blocks.length) {
+              api.blocks.render(JSON.parse(value))
+            }
+            document.querySelector('[data-tool="image"]').remove()
+          }}
+          onChange={(api, newData) => {
+            if (newData.blocks.length) {
+              onChange({target: {name, value: JSON.stringify(newData)}})
+            }
+          }}
+          tools={{...EditorTools, ...customImageTool}}
+          instanceRef={instance => setEditorInstance(instance)}
+        />
+      </div>
       <MediaLibComponent
         toggle={mediaLibToggleFunc}
         isOpen={isMediaLibOpen}

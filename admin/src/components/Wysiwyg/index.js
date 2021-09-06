@@ -1,59 +1,100 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { isEmpty } from 'lodash';
-import { Label, InputDescription, InputErrors } from 'strapi-helper-plugin';
+import { LabelIconWrapper } from 'strapi-helper-plugin';
 import Editor from '../editorjs';
 
-const Wysiwyg = ({
-  inputDescription,
-  errors,
-  label,
-  name,
-  noErrorsDescription,
-  onChange,
-  value,
-}) => {
+import cn from 'classnames';
+import { Description, ErrorMessage, Label } from '@buffetjs/styles';
+import { Error } from '@buffetjs/core';
+import Wrapper from './wrapper';
 
-  return (
-    <div
-      style={{
-        marginBottom: '1.6rem',
-        fontSize: '1.3rem',
-        fontFamily: 'Lato',
-      }}
-    >
-      <Label
-        htmlFor={name}
-        message={label}
-        style={{ marginBottom: 10 }}
-      />
-      <Editor
-        name={name}
-        onChange={onChange}
-        value={value}
-      />
-      <InputDescription
-        message={inputDescription}
-        style={!isEmpty(inputDescription) ? { marginTop: '1.4rem' } : {}}
-      />
-      <InputErrors
-        errors={(!noErrorsDescription && errors) || []}
-        name={name}
-      />
-    </div>
-  );
-};
+// eslint-disable-next-line react/prefer-stateless-function
+class WysiwygWithErrors extends React.Component {
+  render() {
+    const {
+      autoFocus,
+      className,
+      deactivateErrorHighlight,
+      disabled,
+      error: inputError,
+      inputClassName,
+      inputDescription,
+      inputStyle,
+      label,
+      labelIcon,
+      name,
+      onBlur: handleBlur,
+      onChange,
+      placeholder,
+      resetProps,
+      style,
+      tabIndex,
+      validations,
+      value,
+      ...rest
+    } = this.props;
 
-Wysiwyg.defaultProps = {
-  errors: [],
-  inputDescription: null,
+    return (
+      <Error inputError={inputError} name={name} type="text" validations={validations}>
+        {({ canCheck, onBlur, error, dispatch }) => {
+          const hasError = Boolean(error);
+
+          return (
+            <Wrapper
+              className={`${cn(!isEmpty(className) && className)} ${hasError ? 'bordered' : ''}`}
+              style={style}
+            >
+              <Label htmlFor={name}>
+                <span>{label}</span>
+                {labelIcon && (
+                  <LabelIconWrapper title={labelIcon.title}>{labelIcon.icon}</LabelIconWrapper>
+                )}
+              </Label>
+              <Editor
+                name={name}
+                onChange={onChange}
+                value={value}
+              />
+              {!hasError && inputDescription && <Description>{inputDescription}</Description>}
+              {hasError && <ErrorMessage>{error}</ErrorMessage>}
+            </Wrapper>
+          );
+        }}
+      </Error>
+    );
+  }
+}
+
+WysiwygWithErrors.defaultProps = {
+  autoFocus: false,
+  className: '',
+  deactivateErrorHighlight: false,
+  didCheckErrors: false,
+  disabled: false,
+  error: null,
+  inputClassName: '',
+  inputDescription: '',
+  inputStyle: {},
   label: '',
-  noErrorsDescription: false,
-  value: '',
+  labelIcon: null,
+  onBlur: false,
+  placeholder: '',
+  resetProps: false,
+  style: {},
+  tabIndex: '0',
+  validations: {},
+  value: null,
 };
 
-Wysiwyg.propTypes = {
-  errors: PropTypes.array,
+WysiwygWithErrors.propTypes = {
+  autoFocus: PropTypes.bool,
+  className: PropTypes.string,
+  deactivateErrorHighlight: PropTypes.bool,
+  didCheckErrors: PropTypes.bool,
+  disabled: PropTypes.bool,
+  error: PropTypes.string,
+  inputClassName: PropTypes.string,
   inputDescription: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.func,
@@ -62,6 +103,7 @@ Wysiwyg.propTypes = {
       params: PropTypes.object,
     }),
   ]),
+  inputStyle: PropTypes.object,
   label: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.func,
@@ -70,10 +112,19 @@ Wysiwyg.propTypes = {
       params: PropTypes.object,
     }),
   ]),
+  labelIcon: PropTypes.shape({
+    icon: PropTypes.node.isRequired,
+    title: PropTypes.string,
+  }),
   name: PropTypes.string.isRequired,
-  noErrorsDescription: PropTypes.bool,
+  onBlur: PropTypes.oneOfType([PropTypes.bool, PropTypes.func]),
   onChange: PropTypes.func.isRequired,
+  placeholder: PropTypes.string,
+  resetProps: PropTypes.bool,
+  style: PropTypes.object,
+  tabIndex: PropTypes.string,
+  validations: PropTypes.object,
   value: PropTypes.string,
 };
 
-export default Wysiwyg;
+export default WysiwygWithErrors;
