@@ -70,6 +70,11 @@
   resolved "https://registry.yarnpkg.com/@editorjs/marker/-/marker-1.2.2.tgz#d9261a257436bf70179c0fa1e766ab85c823c96b"
   integrity sha512-BN/IHbVKKahGnMAiBOV5U7XUjfF6JkIkTZ6qNLxtTr7PUPM8UsJV8G8pyll9CX+XRUYYZyokA2kEBHTS4vUyyw==
 
+"@editorjs/nested-list@^1.0.2":
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/@editorjs/nested-list/-/nested-list-1.0.2.tgz#4eaacfddb0802d0cd612bdd3269d6daa58bf7fab"
+  integrity sha512-NumQfEivI29lOAuDMyVhn+VXUDGvWUPJMkjgKlUYRbnwgnPL4tK007+UzoVPLxv/f6lPOqeKcApvCj/MfskPNw==
+
 "@editorjs/paragraph@2.8.0":
   version "2.8.0"
   resolved "https://registry.yarnpkg.com/@editorjs/paragraph/-/paragraph-2.8.0.tgz#11cc381fcafaf8b9160517ce65d59eee93fc4af9"
@@ -141,12 +146,12 @@
   dependencies:
     "@types/node" "*"
 
-axios@0.21.1:
-  version "0.21.1"
-  resolved "https://registry.yarnpkg.com/axios/-/axios-0.21.1.tgz#22563481962f4d6bde9a76d516ef0e5d3c09b2b8"
-  integrity sha512-dKQiRHxGD9PPRIUNIWvZhPTPpl1rf/OxTYKsqKUDjBwYylTvV7SjSHJb9ratfyzM6wCdLCOYLzs73qpg5c4iGA==
+axios@0.21.3:
+  version "0.21.3"
+  resolved "https://registry.yarnpkg.com/axios/-/axios-0.21.3.tgz#f85d9b747f9b66d59ca463605cedf1844872b82e"
+  integrity sha512-JtoZ3Ndke/+Iwt5n+BgSli/3idTvpt5OjKyoCmz4LX5+lPiY5l7C1colYezhlxThjNa/NhngCUWZSZFypIFuaA==
   dependencies:
-    follow-redirects "^1.10.0"
+    follow-redirects "^1.14.0"
 
 boolbase@^1.0.0:
   version "1.0.0"
@@ -287,10 +292,10 @@ entities@^2.0.0:
   resolved "https://registry.yarnpkg.com/entities/-/entities-2.2.0.tgz#098dc90ebb83d8dffa089d55256b351d34c4da55"
   integrity sha512-p92if5Nz619I0w+akJrLZH0MX0Pb5DX39XOwQTtXSdQQOaYH03S1uIQp4mhOZtAXrxq4ViO67YTiLBo2638o9A==
 
-follow-redirects@^1.10.0:
-  version "1.14.1"
-  resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.14.1.tgz#d9114ded0a1cfdd334e164e6662ad02bfd91ff43"
-  integrity sha512-HWqDgT7ZEkqRzBvc2s64vSZ/hfOceEol3ac/7tKwzuvEyWx3/4UegXh5oBOIotkGsObyk3xznnSRVADBgWSQVg==
+follow-redirects@^1.14.0:
+  version "1.14.3"
+  resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.14.3.tgz#6ada78118d8d24caee595595accdc0ac6abd022e"
+  integrity sha512-3MkHxknWMUtb23apkgz/83fDoe+y+qr0TdgacGIA7bew+QLBo3vdgEN2xEsuXNivpFy4CyDhBBZnNZOtalmenw==
 
 get-file-object-from-local-path@1.0.2:
   version "1.0.2"
@@ -416,10 +421,10 @@ once@^1.3.1, once@^1.4.0:
   dependencies:
     wrappy "1"
 
-open-graph-scraper@4.9.1:
-  version "4.9.1"
-  resolved "https://registry.yarnpkg.com/open-graph-scraper/-/open-graph-scraper-4.9.1.tgz#0745212516b0f5290a435e0b895ae76e3538d562"
-  integrity sha512-4JDHH9GBZXTawyRZPZ1HqhqBv1epNL90go1Nqo5cam65ecExjfeo/XDQr1Bu206IveAoBTgGP6TnJRlff/eFJQ==
+open-graph-scraper@4.9.2:
+  version "4.9.2"
+  resolved "https://registry.yarnpkg.com/open-graph-scraper/-/open-graph-scraper-4.9.2.tgz#0e2c377f241b89fb00f24492da823ed05f44cfc0"
+  integrity sha512-OfqtHRd4UFU3PgHMlNBNkovDrtfuSCExTG0+OdFgvF8TfabnFJ3gyUMliVNeD3cobOZcIUhV8jRfKMg6eCDBmA==
   dependencies:
     chardet "^1.3.0"
     cheerio "^1.0.0-rc.10"
