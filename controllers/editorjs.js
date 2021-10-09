@@ -8,20 +8,23 @@ const { LocalFileData } = require('get-file-object-from-local-path');
 module.exports = {
 
   link: async (ctx) => {
-    return await new Promise((resolve) => {
+    const result = await new Promise((resolve) => {
       ogs(ctx.query, (error, results, response) => {
+
+        const imageUrl = (results.ogImage && results.ogImage.url) ? { url: results.ogImage.url } : undefined;
+
         resolve({
           success: 1,
           meta: {
             title: results.ogTitle,
             description: results.ogDescription,
-            image: {
-              url: results.ogImage.url,
-            },
+            image: imageUrl,
           },
         })
       })
-    })
+    });
+
+    ctx.send(result);
   },
 
   byFile: async (ctx) => {
