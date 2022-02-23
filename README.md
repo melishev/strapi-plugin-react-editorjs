@@ -1,5 +1,5 @@
 <div align="center">
-    <img alt="Logo" src="https://github.com/melishev/strapi-plugin-editor-js/blob/main/assets/strapi-plugin-editorjs.png" width="400px">
+    <img alt="Logo" src="https://github.com/melishev/strapi-plugin-editor-js/blob/main/.github/assets/strapi-plugin-editorjs.png" width="400px">
 </div>
 
 <h1 align="center">🎛 Strapi + ✒️ Editor.js</h1>
@@ -9,7 +9,7 @@
 #### This is a plugin for [Strapi Headless CMS](https://strapi.io) that replaces the standard wysiwyg editor with the cool [Editor.js](https://editorjs.io) and all its compatible add-ons.
 <br>
 
-<img src="https://github.com/melishev/strapi-plugin-editor-js/blob/main/assets/strapi-plugin-editorjs.gif">
+<img src="https://github.com/melishev/strapi-plugin-editor-js/blob/main/.github/assets/strapi-plugin-editorjs.gif">
 <br>
 
 ## 🍀 Supported official add-ons
