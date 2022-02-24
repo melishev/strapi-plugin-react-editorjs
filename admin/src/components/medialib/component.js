@@ -3,11 +3,7 @@ import {useLibrary} from '@strapi/helper-plugin';
 import PropTypes from 'prop-types';
 
 const MediaLibComponent = ({isOpen, onChange, toggle}) => {
-  /*const {
-    strapi: {
-      componentApi: {getComponent},
-    },
-  } = useLibrary();*/
+ 
   const { components } = useLibrary();
   const [data, setData] = useState(null);
   const [isDisplayed, setIsDisplayed] = useState(false);
@@ -18,7 +14,6 @@ const MediaLibComponent = ({isOpen, onChange, toggle}) => {
     }
   }, [isOpen]);
 
-  //const Component = getComponent('media-library').Component;
   const Component = components['media-library'];
 
   const handleInputChange = data => {

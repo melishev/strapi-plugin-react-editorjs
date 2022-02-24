@@ -125,7 +125,7 @@ WysiwygWithErrors.propTypes = {
   onChange: PropTypes.func.isRequired,
   placeholder: PropTypes.string,
   resetProps: PropTypes.bool,
-  //style: PropTypes.object,
+  style: PropTypes.object,
   tabIndex: PropTypes.string,
   validations: PropTypes.object,
   value: PropTypes.string,

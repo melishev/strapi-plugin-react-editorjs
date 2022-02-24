@@ -12,8 +12,6 @@ module.exports = ({ strapi }) => ({
 
       ogs(ctx.query, (error, results, response) => {
 
-        console.log(results);
-
         const imageUrl = (results.ogImage && results.ogImage.url) ? { url: results.ogImage.url } : undefined;
 
         resolve({
