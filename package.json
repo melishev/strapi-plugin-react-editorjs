@@ -25,7 +25,6 @@
     "@editorjs/link": "2.4.0",
     "@editorjs/list": "1.6.2",
     "@editorjs/marker": "1.2.2",
-    "@editorjs/nested-list": "^1.0.2",
     "@editorjs/paragraph": "2.8.0",
     "@editorjs/quote": "2.4.0",
     "@editorjs/raw": "2.3.0",
