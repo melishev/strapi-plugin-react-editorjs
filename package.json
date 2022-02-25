@@ -1,13 +1,13 @@
 {
   "name": "strapi-plugin-react-editorjs",
   "version": "0.0.0-development",
-  "description": "Plugin for Strapi Headless CMS, hiding the standard WYSIWYG editor on Editor.js",
+  "description": "Plugin for Strapi Headless CMS, hiding the standard WYSIWYG editor and replacing it with Editor.js",
   "homepage": "https://github.com/melishev/strapi-plugin-editor-js#readme",
   "strapi": {
     "icon": "plug",
     "name": "react-editorjs",
     "displayName": "React EditorJS",
-    "description": "Plugin for Strapi Headless CMS, hiding the standard WYSIWYG editor on Editor.js",
+    "description": "Plugin for Strapi Headless CMS, hiding the standard WYSIWYG editor and replacing it with Editor.js",
     "required": true,
     "kind": "plugin"
   },
