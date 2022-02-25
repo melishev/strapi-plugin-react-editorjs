@@ -11,7 +11,6 @@ const MediaLibComponent = ({isOpen, onChange, onToggle}) => {
 
   const handleInputChange = data => {
     if (data) {
-      console.log(data);
       setData(data);
     }
   };
@@ -22,7 +21,6 @@ const MediaLibComponent = ({isOpen, onChange, onToggle}) => {
       url: prefixFileUrlWithBackendUrl(f.url),
       mime: f.mime,
     }));
-    console.log('handleSelectAssets');
     onChange(formattedFiles);
   };
 
