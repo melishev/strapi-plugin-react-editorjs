@@ -32,7 +32,7 @@ const MediaLibComponent = ({isOpen, onChange, onToggle}) => {
     <MediaLibraryDialog
       allowedTypes={['images']}
       onClose={onToggle}
-      onInputMediaChange={[handleInputChange, onToggle]}
+      onInputMediaChange={handleInputChange}
       onSelectAssets={handleSelectAssets}
     />
   );
