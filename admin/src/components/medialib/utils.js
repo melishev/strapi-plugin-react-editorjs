@@ -12,7 +12,6 @@ export const changeFunc = ({indexStateSetter, editor, data, index}) => {
   let insertedBlocksCount = 0;
   data.forEach((entry) => {
 
-    console.log(entry);
     if (!entry.mime.includes("image")) {
         return;
     }
