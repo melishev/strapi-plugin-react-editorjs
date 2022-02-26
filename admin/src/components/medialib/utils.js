@@ -25,7 +25,7 @@ export const changeFunc = ({indexStateSetter, editor, data, index}) => {
         height: entry.height,
         width: entry.width,
         size: entry.size,
-        responsive: [entry.formats]
+        formats: entry.formats
       },
       caption: "",
       withBorder: false,
