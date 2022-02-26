@@ -16,10 +16,15 @@ const MediaLibComponent = ({isOpen, onChange, onToggle}) => {
   };
 
   const handleSelectAssets = files => {
+    console.log(files);
     const formattedFiles = files.map(f => ({
       alt: f.alternativeText || f.name,
       url: prefixFileUrlWithBackendUrl(f.url),
+      width: f.width,
+      height: f.height,
+      size: f.size,
       mime: f.mime,
+      formats: f.formats
     }));
     onChange(formattedFiles);
   };

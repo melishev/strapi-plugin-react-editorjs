@@ -11,6 +11,8 @@ export const getToggleFunc = ({openStateSetter, indexStateSetter}) => {
 export const changeFunc = ({indexStateSetter, editor, data, index}) => {
   let insertedBlocksCount = 0;
   data.forEach((entry) => {
+
+    console.log(entry);
     if (!entry.mime.includes("image")) {
         return;
     }
@@ -18,7 +20,12 @@ export const changeFunc = ({indexStateSetter, editor, data, index}) => {
     const newBlockType = "image";
     const newBlockData = {
       file: {
-        url: entry.url.replace(window.location.origin, "")
+        url: entry.url.replace(window.location.origin, ""),
+        mime: entry.mime,
+        height: entry.height,
+        width: entry.width,
+        size: entry.size,
+        responsiveUrls: [entry.formats]
       },
       caption: "",
       withBorder: false,
