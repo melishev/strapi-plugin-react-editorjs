@@ -9,7 +9,7 @@ const Wrapper = styled(Box)`
         }
     }    
     .codex-editor {
-        padding: 1rem;
+        padding: 16px;
         font-size: 1rem;
         font-family: "Lato";
     }
