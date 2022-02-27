@@ -1714,11 +1714,6 @@ duplexer2@~0.1.0:
   dependencies:
     readable-stream "^2.0.2"
 
-editorjs-alert@^1.0.3:
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/editorjs-alert/-/editorjs-alert-1.0.3.tgz#880890b7006f5f09f67d8bb8446aceb4769b66ce"
-  integrity sha512-YsKp0BBmswueE2zh0Lj2YflFA/9pvguHTSsy6uh00p3lattflW33ow4CSYD0JFe3y+TqqD8VoB/IlS7C9fKu0Q==
-
 emoji-regex@^8.0.0:
   version "8.0.0"
   resolved "https://registry.yarnpkg.com/emoji-regex/-/emoji-regex-8.0.0.tgz#e818fd69ce5ccfcb404594f842963bf53164cc37"

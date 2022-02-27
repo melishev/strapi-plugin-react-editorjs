@@ -8,6 +8,10 @@ import cn from 'classnames';
 import { Description, ErrorMessage, Label } from "@buffetjs/styles";
 import { Error } from "@buffetjs/core";
 import Wrapper from './wrapper';
+import { useIntl } from 'react-intl';
+import { Box } from '@strapi/design-system/Box';
+import { Typography } from '@strapi/design-system/Typography';
+
 
 // eslint-disable-next-line react/prefer-stateless-function
 class WysiwygWithErrors extends React.Component {
@@ -22,7 +26,10 @@ class WysiwygWithErrors extends React.Component {
       inputDescription,
       inputStyle,
       label,
+      description,
+      intlLabel,
       labelIcon,
+      required,
       name,
       onBlur: handleBlur,
       onChange,
@@ -44,24 +51,32 @@ class WysiwygWithErrors extends React.Component {
       >
         {({ canCheck, onBlur, error, dispatch }) => {
           const hasError = Boolean(error);
+          const { formatMessage } = useIntl();
 
           return (
             
-              <Wrapper size={1} className={`${cn(!isEmpty(className) && className)} ${hasError ? 'bordered' : ''}`}
-              style={style}>
-                <Label htmlFor={name}>
-                  <span>{label}</span>
-                  {labelIcon && (
-                    <LabelIconWrapper title={labelIcon.title}>
-                      {labelIcon.icon}
-                    </LabelIconWrapper>
+              <Wrapper size={1} className={`${cn(!isEmpty(className) && className)} ${hasError ? 'bordered' : ''}`} style={style}>
+              
+                <Box>
+                  <Typography variant="pi" fontWeight="bold">
+                    {formatMessage(intlLabel)}
+                  </Typography>
+                  {required && (
+                    <Typography variant="pi" fontWeight="bold" textColor="danger600">
+                      *
+                    </Typography>
                   )}
-                </Label>
+                </Box>
                 <Editor name={name} onChange={onChange} value={value} />
-                {!hasError && inputDescription && (
-                  <Description>{inputDescription}</Description>
+                {error && (
+                  <Typography variant="pi" textColor="danger600">
+                    {formatMessage({ id: error, defaultMessage: error })}
+                  </Typography>
                 )}
-                {hasError && <ErrorMessage>{error}</ErrorMessage>}
+                {description && (
+                  <Typography variant="pi">{formatMessage(description)}</Typography>
+                )}
+              
               </Wrapper>
           );
         }}

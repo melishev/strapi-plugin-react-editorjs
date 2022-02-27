@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { Box } from "@strapi/design-system/Box";
 
 const Wrapper = styled(Box)`
+    padding-bottom: 2.8rem;
     @media (min-width: 651px) {
         .codex-editor--narrow .codex-editor__redactor {
             margin-right: 0;
@@ -9,6 +10,8 @@ const Wrapper = styled(Box)`
     }    
     .codex-editor {
         padding: 1rem;
+        font-size: 1rem;
+        font-family: "Lato";
     }
     *:focus-visible {
         outline: none;
@@ -37,9 +40,6 @@ const Wrapper = styled(Box)`
         font-size: .67em;
         font-weight: bold;
     }
-    padding-bottom: 2.8rem;
-    font-size: 1rem;
-    font-family: "Lato";
     label {
       display: block;
       margin-bottom: 1rem;
@@ -59,7 +59,6 @@ const Wrapper = styled(Box)`
       text-overflow: ellipsis;
       margin-bottom: -9px;
     }
-
     div,
     pre,
     code {

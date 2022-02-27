@@ -40,7 +40,7 @@ const Editor = ({ onChange, name, value }) => {
 
   return (
     <>
-      <div style={{ border: `1px solid rgb(227, 233, 243)`, borderRadius: `2px` }}>
+      <div style={{ border: `1px solid rgb(227, 233, 243)`, borderRadius: `2px`, marginTop: `4px` }}>
         <EditorJs
           // data={JSON.parse(value)}
           // enableReInitialize={true}
