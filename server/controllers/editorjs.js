@@ -32,7 +32,7 @@ module.exports = ({ strapi }) => ({
     try {
       const { files } = parseMultipartData(ctx)
 
-      const [uploadedFile] = await strapi.plugin.upload.services.upload.upload({
+      const [uploadedFile] = await strapi.plugin('upload').service('upload').upload({
         data: {},
         files: Object.values(files)
       })
@@ -69,7 +69,7 @@ module.exports = ({ strapi }) => ({
         size: Buffer.byteLength(buffer),
       }
 
-      const [uploadedFile] = await strapi.plugin.upload.services.upload.upload({
+      const [uploadedFile] = await strapi.plugin('upload').service('upload').upload({
         data: {},
         files: file
       })
