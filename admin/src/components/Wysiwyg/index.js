@@ -1,11 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { isEmpty } from 'lodash';
-import { LabelIconWrapper } from "@strapi/helper-plugin";
 import Editor from "../editorjs";
 
 import cn from 'classnames';
-import { Description, ErrorMessage, Label } from "@buffetjs/styles";
 import { Error } from "@buffetjs/core";
 import Wrapper from './wrapper';
 import { useIntl } from 'react-intl';
