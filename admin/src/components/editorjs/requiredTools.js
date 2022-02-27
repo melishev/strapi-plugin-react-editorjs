@@ -1,4 +1,5 @@
 import PluginId from '../../pluginId'
+const axios = require('axios')
 
 // Plugins for Editor.js
 import Image from '@editorjs/image'
