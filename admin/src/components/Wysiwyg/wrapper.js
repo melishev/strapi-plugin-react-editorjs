@@ -68,6 +68,14 @@ const Wrapper = styled(Box)`
         cursor: default;
       }
     }
+    .cdx-input.image-tool__caption {
+      font-size: .9rem;
+      color: #444;
+      line-height: 1.5;
+    }
+    .ce-block--focused {
+      background-image: linear-gradient(17deg,rgba(207,214,229,.1) 63.45%,rgba(207,214,229,.27) 98%,rgba(207,214,229,.27));
+    }
 `;
 
 export default Wrapper;
