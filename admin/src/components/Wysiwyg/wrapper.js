@@ -2,7 +2,6 @@ import styled from 'styled-components';
 import { Box } from "@strapi/design-system/Box";
 
 const Wrapper = styled(Box)`
-    padding-bottom: 2.8rem;
     @media (min-width: 651px) {
         .codex-editor--narrow .codex-editor__redactor {
             margin-right: 0;
@@ -11,7 +10,6 @@ const Wrapper = styled(Box)`
     .codex-editor {
         padding: 16px;
         font-size: 1rem;
-        font-family: "Lato";
     }
     *:focus-visible {
         outline: none;
@@ -72,9 +70,6 @@ const Wrapper = styled(Box)`
       font-size: .9rem;
       color: #444;
       line-height: 1.5;
-    }
-    .ce-block--focused {
-      background-image: linear-gradient(17deg,rgba(207,214,229,.1) 63.45%,rgba(207,214,229,.27) 98%,rgba(207,214,229,.27));
     }
 `;
 

@@ -6,7 +6,7 @@
   "strapi": {
     "icon": "plug",
     "name": "react-editorjs",
-    "displayName": "React EditorJS",
+    "displayName": "EditorJS",
     "description": "Plugin for Strapi Headless CMS, hiding the standard WYSIWYG editor and replacing it with Editor.js",
     "required": true,
     "kind": "plugin"
