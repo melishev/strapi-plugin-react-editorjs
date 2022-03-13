@@ -96,7 +96,7 @@ git clone --single-branch --branch beta https://github.com/melishev/strapi-plugi
 ```js
 module.exports = ({ env }) => ({
   // ...
-  'react-editorjs': {
+  'editorjs': {
     enabled: true,
     resolve: './src/plugins/strapi-plugin-react-editorjs'
   },
