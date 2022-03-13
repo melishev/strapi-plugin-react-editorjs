@@ -20,13 +20,13 @@ const Editor = ({ onChange, name, value }) => {
   }), []);
 
   const handleMediaLibChange = useCallback((data) => {
-
     changeFunc({
         indexStateSetter: setMediaLibBlockIndex,
         data,
         index: mediaLibBlockIndex,
         editor: editorInstance
     });
+    mediaLibToggleFunc();
   }, [mediaLibBlockIndex, editorInstance]);
 
   const customImageTool = {
@@ -40,7 +40,7 @@ const Editor = ({ onChange, name, value }) => {
 
   return (
     <>
-      <div style={{ border: `1px solid rgb(227, 233, 243)`, borderRadius: `2px` }}>
+      <div style={{ border: `1px solid rgb(227, 233, 243)`, borderRadius: `2px`, marginTop: `4px` }}>
         <EditorJs
           // data={JSON.parse(value)}
           // enableReInitialize={true}
@@ -52,7 +52,7 @@ const Editor = ({ onChange, name, value }) => {
           }}
           onChange={(api, newData) => {
             if (newData.blocks.length) {
-              onChange({target: {name, value: JSON.stringify(newData)}})
+              onChange({target: {name, value: JSON.stringify(newData)}});
             }
           }}
           tools={{...requiredTools, ...customTools, ...customImageTool}}
@@ -60,9 +60,9 @@ const Editor = ({ onChange, name, value }) => {
         />
       </div>
       <MediaLibComponent
-        toggle={mediaLibToggleFunc}
         isOpen={isMediaLibOpen}
         onChange={handleMediaLibChange}
+        onToggle={mediaLibToggleFunc}
       />
     </>
   );

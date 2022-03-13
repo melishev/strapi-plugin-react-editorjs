@@ -1,134 +1,84 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { isEmpty } from 'lodash';
-import { LabelIconWrapper } from "@strapi/helper-plugin";
 import Editor from "../editorjs";
-
 import cn from 'classnames';
-import { Description, ErrorMessage, Label } from "@buffetjs/styles";
-import { Error } from "@buffetjs/core";
 import Wrapper from './wrapper';
+import { useIntl } from 'react-intl';
+import { Box } from '@strapi/design-system/Box';
+import { Typography } from '@strapi/design-system/Typography';
 
-// eslint-disable-next-line react/prefer-stateless-function
-class WysiwygWithErrors extends React.Component {
-  render() {
-    const {
-      autoFocus,
-      className,
-      deactivateErrorHighlight,
-      disabled,
-      error: inputError,
-      inputClassName,
-      inputDescription,
-      inputStyle,
-      label,
-      labelIcon,
-      name,
-      onBlur: handleBlur,
-      onChange,
-      placeholder,
-      resetProps,
-      style,
-      tabIndex,
-      validations,
-      value,
-      ...rest
-    } = this.props;
+const Wysiwyg = ({
+  name,
+  className,
+  error,
+  description,
+  intlLabel,
+  required,
+  onChange,
+  style,
+  value,
+  disabled,
+}) => {
+  const { formatMessage } = useIntl();
 
-    return (
-      <Error
-        inputError={inputError}
-        name={name}
-        type="text"
-        validations={validations}
-      >
-        {({ canCheck, onBlur, error, dispatch }) => {
-          const hasError = Boolean(error);
+  return (
+    <Wrapper size={1} className={`${cn(!isEmpty(className) && className)}`} style={style}>            
+      <Box>
+        <Typography variant="pi" fontWeight="bold">
+          {formatMessage(intlLabel)}
+        </Typography>
+        {required && (
+          <Typography variant="pi" fontWeight="bold" textColor="danger600">
+            *
+          </Typography>
+        )}
+      </Box>
+      <Editor onChange={onChange} value={value} name={name} disabled={disabled} />
+      {error && (
+        <Typography variant="pi" textColor="danger600">
+          {formatMessage({ id: error, defaultMessage: error })}
+        </Typography>
+      )}
+      {description && (
+        <Typography variant="pi">{formatMessage(description)}</Typography>
+      )}
+      
+    </Wrapper>
+  )
+};
 
-          return (
-            
-              <Wrapper size={1} className={`${cn(!isEmpty(className) && className)} ${hasError ? 'bordered' : ''}`}
-              style={style}>
-                <Label htmlFor={name}>
-                  <span>{label}</span>
-                  {labelIcon && (
-                    <LabelIconWrapper title={labelIcon.title}>
-                      {labelIcon.icon}
-                    </LabelIconWrapper>
-                  )}
-                </Label>
-                <Editor name={name} onChange={onChange} value={value} />
-                {!hasError && inputDescription && (
-                  <Description>{inputDescription}</Description>
-                )}
-                {hasError && <ErrorMessage>{error}</ErrorMessage>}
-              </Wrapper>
-          );
-        }}
-      </Error>
-    );
-  }
-}
-
-WysiwygWithErrors.defaultProps = {
-  autoFocus: false,
+Wysiwyg.defaultProps = {
   className: "",
-  deactivateErrorHighlight: false,
-  didCheckErrors: false,
-  disabled: false,
-  error: null,
-  inputClassName: "",
-  inputDescription: "",
-  inputStyle: {},
-  label: "",
-  labelIcon: null,
-  onBlur: false,
-  placeholder: "",
-  resetProps: false,
   style: {},
   tabIndex: "0",
-  validations: {},
   value: null,
+  description: '',
+  disabled: false,
+  error: undefined,
+  intlLabel: '',
+  required: false,
+  value: '',
 };
 
-WysiwygWithErrors.propTypes = {
-  autoFocus: PropTypes.bool,
+Wysiwyg.propTypes = {
   className: PropTypes.string,
-  deactivateErrorHighlight: PropTypes.bool,
-  didCheckErrors: PropTypes.bool,
-  disabled: PropTypes.bool,
-  error: PropTypes.string,
-  inputClassName: PropTypes.string,
-  inputDescription: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.func,
-    PropTypes.shape({
-      id: PropTypes.string,
-      params: PropTypes.object,
-    }),
-  ]),
-  inputStyle: PropTypes.object,
-  label: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.func,
-    PropTypes.shape({
-      id: PropTypes.string,
-      params: PropTypes.object,
-    }),
-  ]),
-  labelIcon: PropTypes.shape({
-    icon: PropTypes.node.isRequired,
-    title: PropTypes.string,
-  }),
-  name: PropTypes.string.isRequired,
-  onBlur: PropTypes.oneOfType([PropTypes.bool, PropTypes.func]),
-  onChange: PropTypes.func.isRequired,
-  placeholder: PropTypes.string,
-  resetProps: PropTypes.bool,
   style: PropTypes.object,
   tabIndex: PropTypes.string,
-  validations: PropTypes.object,
+  description: PropTypes.shape({
+    id: PropTypes.string,
+    defaultMessage: PropTypes.string,
+  }),
+  disabled: PropTypes.bool,
+  error: PropTypes.string,
+  intlLabel: PropTypes.shape({
+    id: PropTypes.string,
+    defaultMessage: PropTypes.string,
+  }),
+  required: PropTypes.bool,
   value: PropTypes.string,
+  name: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired,
 };
 
-export default WysiwygWithErrors;
+export default Wysiwyg;
