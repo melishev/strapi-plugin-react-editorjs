@@ -4,7 +4,7 @@
 
 <h1 align="center">🎛 Strapi + ✒️ Editor.js</h1>
 
-⚠️ **This is the Strapi v4 version of this plugin! In order to use with v3, please use release v.1.5.1 (https://github.com/melishev/strapi-plugin-react-editorjs/releases/tag/v1.5.1).**
+⚠️ **This is the Strapi v4 version of this plugin! In order to use with v3, please use [release v.1.5.1](https://github.com/melishev/strapi-plugin-react-editorjs/releases/tag/v1.5.1).**
 
 
 ## 🙉 What it is?
