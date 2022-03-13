@@ -1,3 +1,21 @@
+# [2.0.0-beta.2](https://github.com/melishev/strapi-plugin-editor-js/compare/v2.0.0-beta.1...v2.0.0-beta.2) (2022-03-13)
+
+
+### Bug Fixes
+
+* fixed the image tool. Now able to add images from the media library, and automatically shuts the media library window after saving. ([fb5a907](https://github.com/melishev/strapi-plugin-editor-js/commit/fb5a907de6d4d6399b6a5e23b596d9893159944c))
+* include label for the rich text editor field ([73187d7](https://github.com/melishev/strapi-plugin-editor-js/commit/73187d73977d25ddb317c890cc2b5f48e72ed94c))
+* refactored to allow copy and paste images from another website ([3330250](https://github.com/melishev/strapi-plugin-editor-js/commit/3330250a03e64e41095057b8ecd7290e4c6f688c)), closes [#5](https://github.com/melishev/strapi-plugin-editor-js/issues/5)
+* returned to making API route only be 'react-editorjs' ([ee9b747](https://github.com/melishev/strapi-plugin-editor-js/commit/ee9b74759786f8bcd87135a80932a14885f5a3f7))
+* solution for [#5](https://github.com/melishev/strapi-plugin-editor-js/issues/5) axios ([1f2d9a7](https://github.com/melishev/strapi-plugin-editor-js/commit/1f2d9a73c7fb2a7653d8e7527cbd2c03f76335c5))
+
+
+### Features
+
+* add background to focused block & differentiate image tool caption ([a5d2b1b](https://github.com/melishev/strapi-plugin-editor-js/commit/a5d2b1b5650926014da076c9844739ffe6a81897))
+* add width, height, size, mime, responsive data to image tool ([e07548c](https://github.com/melishev/strapi-plugin-editor-js/commit/e07548ca71e7ffc211acb53e8aa556ef2fe660e6)), closes [#6](https://github.com/melishev/strapi-plugin-editor-js/issues/6) [#16](https://github.com/melishev/strapi-plugin-editor-js/issues/16)
+* enabled inline links ([ad11533](https://github.com/melishev/strapi-plugin-editor-js/commit/ad11533f0ba260cb1671bbd62ef7641bfd06512a))
+
 # [2.0.0-beta.1](https://github.com/melishev/strapi-plugin-editor-js/compare/v1.5.1...v2.0.0-beta.1) (2022-02-24)
 
 
