@@ -5,7 +5,7 @@ import Table from '@editorjs/table'
 import List from '@editorjs/list'
 import Warning from '@editorjs/warning'
 import Code from '@editorjs/code'
-import Link from '@editorjs/link'
+import LinkTool from '@editorjs/link'
 import Raw from '@editorjs/raw'
 import Header from '@editorjs/header'
 import Quote from '@editorjs/quote'
@@ -33,10 +33,10 @@ const customTools = {
     },
   },
   code: Code,
-  link: {
-    class: Link,
+  LinkTool: {
+    class: LinkTool,
     config: {
-      endpoint: `/${PluginId}/link`,
+      endpoint: `/api/${PluginId}/link`,
     },
   },
   raw: {

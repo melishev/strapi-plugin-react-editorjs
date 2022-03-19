@@ -1,4 +1,5 @@
 import PluginId from '../../pluginId'
+const axios = require('axios')
 
 // Plugins for Editor.js
 import Image from '@editorjs/image'
@@ -15,7 +16,7 @@ const requiredTools = {
         "Authorization": `Bearer ${JSON.parse(sessionStorage.getItem("jwtToken"))}`
       },
       endpoints: {
-        byUrl: `/${PluginId}/image/byUrl`,
+        byUrl: `/api/${PluginId}/image/byUrl`,
       },
       uploader: {
         async uploadByFile(file) {
@@ -23,7 +24,7 @@ const requiredTools = {
           formData.append("data", JSON.stringify({}));
           formData.append("files.image", file);
 
-          const {data} = await axios.post(`/${PluginId}/image/byFile`, formData, {
+          const {data} = await axios.post(`/api/${PluginId}/image/byFile`, formData, {
             headers: {
               "Authorization": `Bearer ${JSON.parse(sessionStorage.getItem("jwtToken"))}`
             }
