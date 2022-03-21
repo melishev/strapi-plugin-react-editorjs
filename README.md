@@ -12,8 +12,7 @@
 #### This is a plugin for [Strapi Headless CMS](https://strapi.io) that replaces the standard wysiwyg editor with the cool [Editor.js](https://editorjs.io) and all its compatible add-ons.
 <br>
 
-<!-- <img src="https://github.com/melishev/strapi-plugin-editor-js/blob/master/.github/assets/strapi-plugin-editorjs.gif"> -->
-<video src="./.github/assets/strapi-plugin-editorjs.mp4" autoplay mute>
+<img src="https://github.com/melishev/strapi-plugin-editor-js/blob/master/.github/assets/strapi-plugin-editorjs.gif">
 <br>
 
 ## 🍀 Supported official add-ons
