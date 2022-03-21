@@ -2,7 +2,7 @@
   "name": "strapi-plugin-react-editorjs",
   "version": "0.0.0-development",
   "description": "Plugin for Strapi Headless CMS, hiding the standard WYSIWYG editor and replacing it with Editor.js",
-  "homepage": "https://github.com/melishev/strapi-plugin-editor-js#readme",
+  "homepage": "https://market.strapi.io/plugins/strapi-plugin-react-editorjs",
   "strapi": {
     "icon": "plug",
     "name": "editorjs",
