@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import {Box} from "@strapi/design-system/Box";
 
 const computeInterfaceModeStyle = () => {
-  const strapiTheme = window.localStorage.getItem('STRAPI_THEME');
+  let strapiTheme = window.localStorage.getItem('STRAPI_THEME');
   let interfaceModeTextColor = 'black';
   let toolbarButtonHoverColor = 'white';
   let selectionColor = '#e1f2ff';
@@ -22,7 +22,10 @@ const computeInterfaceModeStyle = () => {
   } else {
     // Check what the browser settings are, strapi falls back onto this when there is no local storage
     if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      strapiTheme = 'dark';
       interfaceModeTextColor = 'white';
+      toolbarButtonHoverColor = '#181826';
+      selectionColor = "#181826";
       linkColor = '#7b79ff';
     }
   }
