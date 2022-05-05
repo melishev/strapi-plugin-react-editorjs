@@ -1,3 +1,10 @@
+## [2.0.1](https://github.com/melishev/strapi-plugin-editor-js/compare/v2.0.0...v2.0.1) (2022-05-05)
+
+
+### Bug Fixes
+
+* bug upload image from clipboard ([#44](https://github.com/melishev/strapi-plugin-editor-js/issues/44)) ([fd67756](https://github.com/melishev/strapi-plugin-editor-js/commit/fd67756ec5991c9ac44da05c6c639f8f763492fb))
+
 # [2.0.0](https://github.com/melishev/strapi-plugin-editor-js/compare/v1.5.1...v2.0.0) (2022-03-19)
 
 
