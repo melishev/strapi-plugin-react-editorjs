@@ -57,8 +57,7 @@ Wysiwyg.defaultProps = {
   disabled: false,
   error: undefined,
   intlLabel: '',
-  required: false,
-  value: '',
+  required: false
 };
 
 Wysiwyg.propTypes = {
