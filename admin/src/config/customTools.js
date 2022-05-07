@@ -33,7 +33,7 @@ const customTools = {
     },
   },
   code: Code,
-  LinkTool: {
+  link: {
     class: LinkTool,
     config: {
       endpoint: `/api/${PluginId}/link`,
