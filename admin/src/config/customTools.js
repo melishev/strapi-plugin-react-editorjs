@@ -79,7 +79,7 @@ const customTools = {
   tuneAlignment: {
     class: AlignmentTuneTool,
     config:{
-      default: "right",
+      default: "left",
       blocks: {
         header: 'center',
         list: 'right'
