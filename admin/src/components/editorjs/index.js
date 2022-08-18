@@ -51,8 +51,11 @@ const Editor = ({ onChange, name, value }) => {
             document.querySelector('[data-tool="image"]').remove()
           }}
           onChange={(api, newData) => {
-            if (newData.blocks.length) {
-              onChange({target: {name, value: JSON.stringify(newData)}});
+            if (!newData.blocks.length) {
+              newData = null;
+              onChange({ target: { name, value: newData } });
+            } else {
+              onChange({ target: { name, value: JSON.stringify(newData) } });
             }
           }}
           tools={{...requiredTools, ...customTools, ...customImageTool}}
