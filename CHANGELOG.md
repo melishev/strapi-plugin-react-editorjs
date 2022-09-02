@@ -1,3 +1,10 @@
+## [2.0.2](https://github.com/melishev/strapi-plugin-editor-js/compare/v2.0.1...v2.0.2) (2022-09-02)
+
+
+### Bug Fixes
+
+* empty editor and required field ([#59](https://github.com/melishev/strapi-plugin-editor-js/issues/59)) ([6320c2a](https://github.com/melishev/strapi-plugin-editor-js/commit/6320c2a35c72ce8a416cfb2032a22fd6566f9a40))
+
 ## [2.0.1](https://github.com/melishev/strapi-plugin-editor-js/compare/v2.0.0...v2.0.1) (2022-05-05)
 
 
