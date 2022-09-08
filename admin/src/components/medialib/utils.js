@@ -20,12 +20,16 @@ export const changeFunc = ({indexStateSetter, editor, data, index}) => {
     const newBlockData = {
       file: {
         url: entry.url.replace(window.location.origin, ""),
-        mime: entry.mime,
+        alternativeText: entry.alternativeText,
+        name: entry.name,
         height: entry.height,
         width: entry.width,
         size: entry.size,
-        alt: entry.alt,
+        mime: entry.mime,
         formats: entry.formats,
+        ext: entry.ext,
+        previewUrl: entry.previewUrl,
+        provider_metadata: entry.provider_metadata
       },
       caption: "",
       withBorder: false,
