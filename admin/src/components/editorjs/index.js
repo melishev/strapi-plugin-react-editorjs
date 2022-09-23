@@ -7,6 +7,8 @@ import customTools from '../../config/customTools';
 import MediaLibAdapter from '../medialib/adapter'
 import MediaLibComponent from '../medialib/component';
 import {changeFunc, getToggleFunc} from '../medialib/utils';
+import DragDrop from 'editorjs-drag-drop';
+import Undo from 'editorjs-undo';
 
 const Editor = ({ onChange, name, value }) => {
 
@@ -38,18 +40,22 @@ const Editor = ({ onChange, name, value }) => {
     }
   }
 
+  const handleReady = (editor) => {
+    new Undo({ editor });
+    new DragDrop(editor);
+    if(value && JSON.parse(value).blocks.length) {
+      editor.blocks.render(JSON.parse(value))
+    }
+    document.querySelector('[data-tool="image"]').remove()
+  };
+
   return (
     <>
       <div style={{ border: `1px solid rgb(227, 233, 243)`, borderRadius: `2px`, marginTop: `4px` }}>
         <EditorJs
           // data={JSON.parse(value)}
           // enableReInitialize={true}
-          onReady={(api) => {
-            if(value && JSON.parse(value).blocks.length) {
-              api.blocks.render(JSON.parse(value))
-            }
-            document.querySelector('[data-tool="image"]').remove()
-          }}
+          onReady={ handleReady }
           onChange={(api, newData) => {
             if (!newData.blocks.length) {
               newData = null;
