@@ -46,7 +46,9 @@ const Editor = ({ onChange, name, value }) => {
     if(value && JSON.parse(value).blocks.length) {
       editor.blocks.render(JSON.parse(value))
     }
-    document.querySelector('[data-tool="image"]').remove()
+    if (document.querySelector('[data-tool="image"]')) {
+      document.querySelector('[data-tool="image"]').remove()
+    }
   };
 
   return (
