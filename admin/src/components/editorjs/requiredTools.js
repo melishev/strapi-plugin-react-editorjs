@@ -1,5 +1,6 @@
 import PluginId from '../../pluginId'
 const axios = require('axios')
+import { auth } from '@strapi/helper-plugin';
 
 // Plugins for Editor.js
 import Image from '@editorjs/image'
@@ -13,7 +14,7 @@ const requiredTools = {
         data: JSON.stringify({})
       },
       additionalRequestHeaders: {
-        "Authorization": `Bearer ${JSON.parse(sessionStorage.getItem("jwtToken"))}`
+        "Authorization": `Bearer ${auth.getToken()}`
       },
       endpoints: {
         byUrl: `/api/${PluginId}/image/byUrl`,
@@ -26,7 +27,7 @@ const requiredTools = {
 
           const {data} = await axios.post(`/api/${PluginId}/image/byFile`, formData, {
             headers: {
-              "Authorization": `Bearer ${JSON.parse(sessionStorage.getItem("jwtToken"))}`
+              "Authorization": `Bearer ${auth.getToken()}`
             }
           });
 
