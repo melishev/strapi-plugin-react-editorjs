@@ -7,13 +7,20 @@ const computeInterfaceModeStyle = () => {
   let toolbarButtonHoverColor = 'white';
   let selectionColor = '#e1f2ff';
   let linkColor = 'initial';
+  let actionButtonFillColor = 'initial';
+
+  const darkModeDefaults = () => {
+    strapiTheme = 'dark';
+    interfaceModeTextColor = 'white';
+    toolbarButtonHoverColor = '#181826';
+    selectionColor = "#181826";
+    linkColor = '#7b79ff';
+    actionButtonFillColor = 'white';
+  }
 
   if (strapiTheme) {
     if (strapiTheme === 'dark') {
-      interfaceModeTextColor = 'white';
-      toolbarButtonHoverColor = '#181826';
-      selectionColor = "#181826";
-      linkColor = '#7b79ff';
+      darkModeDefaults()
     }
     if (strapiTheme === 'light') {
       interfaceModeTextColor = 'black'
@@ -22,11 +29,7 @@ const computeInterfaceModeStyle = () => {
   } else {
     // Check what the browser settings are, strapi falls back onto this when there is no local storage
     if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      strapiTheme = 'dark';
-      interfaceModeTextColor = 'white';
-      toolbarButtonHoverColor = '#181826';
-      selectionColor = "#181826";
-      linkColor = '#7b79ff';
+      darkModeDefaults();
     }
   }
 
@@ -89,6 +92,10 @@ const computeInterfaceModeStyle = () => {
     
     .ce-settings--opened svg {
       fill: currentColor;
+    }
+    
+    .tc-add-column svg:first-of-type, .tc-add-row svg:first-of-type  {
+      fill: ${actionButtonFillColor};
     }
   `;
 }
