@@ -98,15 +98,14 @@ const computeInterfaceModeStyle = () => {
       fill: ${actionButtonFillColor};
     }
     
-    .image-tool__caption {
-      color: ${interfaceModeTextColor}
+    .image-tool .image-tool__caption {
+      color: ${interfaceModeTextColor} !important;
     }
   `;
 }
 
 
 const Wrapper = styled(Box)`
-
   ${computeInterfaceModeStyle};
 
   @media (min-width: 651px) {
@@ -191,6 +190,8 @@ const Wrapper = styled(Box)`
     color: #444;
     line-height: 1.5;
   }
+
+  
 `;
 
 export default Wrapper;
