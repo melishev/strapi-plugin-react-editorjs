@@ -3,7 +3,7 @@ import {Box} from "@strapi/design-system/Box";
 
 const computeInterfaceModeStyle = () => {
   let strapiTheme = window.localStorage.getItem('STRAPI_THEME');
-  let interfaceModeTextColor = 'black';
+  let interfaceModeTextColor = 'initial';
   let toolbarButtonHoverColor = 'white';
   let selectionColor = '#e1f2ff';
   let linkColor = 'initial';
@@ -96,6 +96,10 @@ const computeInterfaceModeStyle = () => {
     
     .tc-add-column svg:first-of-type, .tc-add-row svg:first-of-type  {
       fill: ${actionButtonFillColor};
+    }
+    
+    .image-tool__caption {
+      color: ${interfaceModeTextColor}
     }
   `;
 }
