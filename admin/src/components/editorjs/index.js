@@ -57,14 +57,11 @@ const Editor = ({ onChange, name, value }) => {
         <EditorJs
           // data={JSON.parse(value)}
           // enableReInitialize={true}
-          onReady={ handleReady }
-          onChange={(api, newData) => {
-            if (!newData.blocks.length) {
-              newData = null;
-              onChange({ target: { name, value: newData } });
-            } else {
-              onChange({ target: { name, value: JSON.stringify(newData) } });
-            }
+          onReady={handleReady}
+          onChange={(api) => {
+            api.saver.save().then((res) => {
+              onChange({ target: { name, value: JSON.stringify(res) } });
+            });
           }}
           tools={{...requiredTools, ...customTools, ...customImageTool}}
           instanceRef={instance => setEditorInstance(instance)}
