@@ -1,0 +1,91 @@
+{
+  "ui": {
+    "blockTunes": {
+      "toggler": {
+        "Click to tune": "",
+        "or drag to move": ""
+      }
+    },
+    "inlineToolbar": {
+      "converter": {
+        "Convert to": ""
+      }
+    },
+    "toolbar": {
+      "toolbox": {
+        "Add": "",
+        "Filter": "",
+        "Nothing found": ""
+      }
+    }
+  },
+  "toolNames": {
+    "Embed": "",
+    "Table": "",
+    "List": "",
+    "Warning": "",
+    "Code": "",
+    "Text": "",
+    "Link": "",
+    "Raw HTML": "",
+    "Underline": "",
+    "Heading": "",
+    "Paragraph": "",
+    "Quote": "",
+    "Marker": "",
+    "Checklist": "",
+    "Delimiter": "",
+    "InlineCode": "",
+    "TuneAlignment": "",
+    "Bold": "",
+    "Italic": ""
+  },
+  "tools": {
+    "embed": { "Enter a caption": "" },
+    "table": {
+      "With headings": "",
+      "Without headings": "",
+      "Heading": "",
+      "Add row above": "",
+      "Add row below": "",
+      "Delete row": "",
+      "Add column to left": "",
+      "Add column to right": "",
+      "Delete column": ""
+    },
+    "list": {
+      "Unordered": "",
+      "Ordered": ""
+    },
+    "warning": {
+      "Title": "",
+      "Message": ""
+    },
+    "code": { "Enter a code": "" },
+    "link": {
+      "Link": "",
+      "Add a link": "",
+      "Couldn't fetch the link data": "",
+      "Couldn't get this link data, try the other one": "",
+      "Wrong response format from the server": ""
+    },
+    "raw": {
+      "Enter HTML code": ""
+    },
+    "quote": { "Quote": "", "Quote's author": "" },
+    "stub": {
+      "The block can not be displayed correctly.": ""
+    }
+  },
+  "blockTunes": {
+    "delete": {
+      "Delete": ""
+    },
+    "moveUp": {
+      "Move up": ""
+    },
+    "moveDown": {
+      "Move down": ""
+    }
+  }
+}

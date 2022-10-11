@@ -1,14 +1,24 @@
-import React, { useState, useCallback } from 'react';
-import PropTypes from 'prop-types';
-import EditorJs from 'react-editor-js';
-import requiredTools from './requiredTools';
-import customTools from '../../config/customTools';
+import { useQueryParams } from "@strapi/helper-plugin";
+import PropTypes from "prop-types";
+import React, { useCallback, useState } from "react";
+import EditorJs from "react-editor-js";
 
-import MediaLibAdapter from '../medialib/adapter'
-import MediaLibComponent from '../medialib/component';
-import {changeFunc, getToggleFunc} from '../medialib/utils';
+import customTools from "../../config/customTools";
+import MediaLibAdapter from "../medialib/adapter";
+import MediaLibComponent from "../medialib/component";
+import { changeFunc, getToggleFunc } from "../medialib/utils";
+import locales from "./locales";
+import requiredTools from "./requiredTools";
+
+const localStorageKey = "strapi-admin-language";
 
 const Editor = ({ onChange, name, value }) => {
+  const [{ query }] = useQueryParams();
+  const adminLanguage =
+    (
+      query.plugins?.i18n?.locale ||
+      window.localStorage.getItem(localStorageKey)
+    ).split("-")[0] || "en";
 
   const [editorInstance, setEditorInstance] = useState();
   const [mediaLibBlockIndex, setMediaLibBlockIndex] = useState(-1);
@@ -60,6 +70,10 @@ const Editor = ({ onChange, name, value }) => {
           }}
           tools={{...requiredTools, ...customTools, ...customImageTool}}
           instanceRef={instance => setEditorInstance(instance)}
+          i18n={{
+            messages: locales.messages[adminLanguage],
+            direction: locales.checkRTL(adminLanguage),
+          }}
         />
       </div>
       <MediaLibComponent
