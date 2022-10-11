@@ -62,8 +62,8 @@ const customTools = {
     class: Quote,
     inlineToolbar: true,
     config: {
-      quotePlaceholder: 'Quote',
-      captionPlaceholder: 'Quote`s author',
+      quotePlaceholder: "Quote",
+      captionPlaceholder: "Quote's author",
     },
   },
   marker: {

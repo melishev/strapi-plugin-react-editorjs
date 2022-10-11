@@ -1,0 +1,100 @@
+{
+  "ui": {
+    "blockTunes": {
+      "toggler": {
+        "Click to tune": "Ayarlamak için tıklayın",
+        "or drag to move": "veya taşımak için sürükleyin"
+      }
+    },
+    "inlineToolbar": {
+      "converter": {
+        "Convert to": "Dönüştür"
+      }
+    },
+    "toolbar": {
+      "toolbox": {
+        "Add": "Ekle",
+        "Filter": "Filtre",
+        "Nothing found": "Hiçbir şey bulunamadı"
+      }
+    }
+  },
+  "toolNames": {
+    "Image": "Resim",
+    "Embed": "Yerleştir",
+    "Table": "Tablo",
+    "List": "Liste",
+    "Warning": "Uyarı",
+    "Code": "Kod",
+    "Text": "Metin",
+    "Link": "Bağlantı",
+    "Raw HTML": "Ham HTML",
+    "Underline": "Alt çizgi",
+    "Heading": "Başlık",
+    "Paragraph": "Paragraf",
+    "Quote": "Alıntı",
+    "Marker": "İşaretleyici",
+    "Checklist": "Kontrol listesi",
+    "Delimiter": "Sınırlayıcı",
+    "InlineCode": "Satır İçi Kod",
+    "TuneAlignment": "Hizalama",
+    "Bold": "Kalın",
+    "Italic": "İtalik"
+  },
+  "tools": {
+    "image": {
+      "Caption": "Altyazı",
+      "Couldn’t upload image. Please try another.": "Resim yüklenemedi. Lütfen başka bir tane deneyin.",
+      "Select an Image": "Bir Resim Seçin",
+      "With border": "Sınırlı",
+      "Stretch image": "Uzatılmış görüntü",
+      "With background": "Arka planlı"
+    },
+    "embed": { "Enter a caption": "Bir başlık girin" },
+    "table": {
+      "With headings": "Başlıklı",
+      "Without headings": "Başlıksız",
+      "Heading": "Başlık",
+      "Add row above": "Üst satır ekle",
+      "Add row below": "Aşağıya satır ekle",
+      "Delete row": "Satırı sil",
+      "Add column to left": "Soldan sütun ekle",
+      "Add column to right": "Sağa sütun ekle",
+      "Delete column": "Sütunu sil"
+    },
+    "list": {
+      "Unordered": "Sırasız",
+      "Ordered": "Sıralı"
+    },
+    "warning": {
+      "Title": "Başlık",
+      "Message": "Mesaj"
+    },
+    "code": { "Enter a code": "Bir kod girin" },
+    "link": {
+      "Link": "Bağlantı",
+      "Add a link": "Bağlantı ekle",
+      "Couldn't fetch the link data": "Bağlantı verileri getirilemedi",
+      "Couldn't get this link data, try the other one": "Bu bağlantı verisi alınamadı, diğerini deneyin",
+      "Wrong response format from the server": "Sunucudan yanlış yanıt biçimi"
+    },
+    "raw": {
+      "Enter HTML code": "HTML kodunu girin"
+    },
+    "quote": { "Quote": "Alıntı", "Quote's author": "Alıntının yazarı" },
+    "stub": {
+      "The block can not be displayed correctly.": "Blok düzgün görüntülenemiyor."
+    }
+  },
+  "blockTunes": {
+    "delete": {
+      "Delete": "Sil"
+    },
+    "moveUp": {
+      "Move up": "Yukarı taşı"
+    },
+    "moveDown": {
+      "Move down": "Aşağı taşı"
+    }
+  }
+}
