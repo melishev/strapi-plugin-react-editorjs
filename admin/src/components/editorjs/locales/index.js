@@ -24,16 +24,22 @@ const RTL_LANGUAGES = [
   "yi" /* 'ייִדיש', Yiddish */,
 ];
 
-const checkRTL = (language) => {
-  if (language.textInfo === undefined) {
-    const baseLang = language.split("-")[0];
-
-    return RTL_LANGUAGES.includes(baseLang) ? "rtl" : "ltr";
-  }
-
-  return language.textInfo.direction;
-};
-
 const messages = { en, es, tr };
 
-export default { messages, checkRTL };
+const getI18N = (language) => {
+  const baseLang = language.split("-")[0];
+  let direction = "ltr";
+
+  if (language.textInfo === undefined) {
+    direction = RTL_LANGUAGES.includes(baseLang) ? "rtl" : "ltr";
+  } else {
+    direction = language.textInfo.direction;
+  }
+
+  return {
+    massages: messages[baseLang],
+    direction,
+  };
+};
+
+export { getI18N };
