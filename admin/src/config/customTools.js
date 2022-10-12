@@ -1,5 +1,6 @@
 import PluginId from '../pluginId'
 
+import Paragraph from '@editorjs/paragraph'
 import Embed from '@editorjs/embed'
 import Table from '@editorjs/table'
 import List from '@editorjs/list'
@@ -13,6 +14,9 @@ import Marker from '@editorjs/marker'
 import CheckList from '@editorjs/checklist'
 import Delimiter from '@editorjs/delimiter'
 import InlineCode from '@editorjs/inline-code'
+import Underline from '@editorjs/underline';
+import NestedList from '@editorjs/nested-list';
+import AlignmentTuneTool from 'editorjs-text-alignment-blocktune';
 
 const customTools = {
   embed: Embed,
@@ -21,7 +25,7 @@ const customTools = {
     inlineToolbar: true,
   },
   list: {
-    class: List,
+    class: NestedList,
     inlineToolbar: true,
   },
   warning: {
@@ -43,16 +47,23 @@ const customTools = {
     class: Raw,
     inlineToolbar: true,
   },
+  underline: Underline,
   header: {
     class: Header,
     inlineToolbar: true,
+    tunes: ['tuneAlignment'],
+  },
+  paragraph: {
+    class: Paragraph,
+    inlineToolbar: true,
+    tunes: ['tuneAlignment'],
   },
   quote: {
     class: Quote,
     inlineToolbar: true,
     config: {
-      quotePlaceholder: 'Quote',
-      captionPlaceholder: 'Quote`s author',
+      quotePlaceholder: "Quote",
+      captionPlaceholder: "Quote's author",
     },
   },
   marker: {
@@ -65,6 +76,16 @@ const customTools = {
   },
   delimiter: Delimiter,
   inlineCode: InlineCode,
+  tuneAlignment: {
+    class: AlignmentTuneTool,
+    config:{
+      default: "left",
+      blocks: {
+        header: 'center',
+        list: 'right'
+      }
+    },
+  }
 }
 
 export default customTools

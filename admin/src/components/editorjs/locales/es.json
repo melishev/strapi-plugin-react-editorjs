@@ -1,0 +1,100 @@
+{
+  "ui": {
+    "blockTunes": {
+      "toggler": {
+        "Click to tune": "Presiona para afinar",
+        "or drag to move": "o arrastra para mover"
+      }
+    },
+    "inlineToolbar": {
+      "converter": {
+        "Convert to": "Convertir a"
+      }
+    },
+    "toolbar": {
+      "toolbox": {
+        "Add": "Añadir",
+        "Filter": "Filtrar",
+        "Nothing found": "No se encontró nada"
+      }
+    }
+  },
+  "toolNames": {
+    "Image": "Imagen",
+    "Embed": "Incrustación",
+    "Table": "Tabla",
+    "List": "Lista",
+    "Warning": "Advertencia",
+    "Code": "Código",
+    "Text": "Texto",
+    "Link": "Enlace",
+    "Raw HTML": "HTML Crudo",
+    "Underline": "Subrayado",
+    "Heading": "Cabezal",
+    "Paragraph": "Párrafo",
+    "Quote": "Cita",
+    "Marker": "Marcador",
+    "Checklist": "Lista de Verificación",
+    "Delimiter": "Delimitador",
+    "InlineCode": "Código en una línea",
+    "TuneAlignment": "Alineamiento",
+    "Bold": "Negrita",
+    "Italic": "Italica"
+  },
+  "tools": {
+    "image": {
+      "Caption": "Título",
+      "Couldn’t upload image. Please try another.": "No se pudo cargar la image. Por favor intente con otra.",
+      "Select an Image": "Seleccione una imagen",
+      "With border": "Bordeado",
+      "Stretch image": "Estirar imagen",
+      "With background": "Con fondo"
+    },
+    "embed": { "Enter a caption": "Escribe una leyenda" },
+    "table": {
+      "With headings": "Con cabecera",
+      "Without headings": "Sin cabecera",
+      "Heading": "Cabecera",
+      "Add row above": "Añadir fila encima",
+      "Add row below": "Añadir fila debajo",
+      "Delete row": "Eliminar fila",
+      "Add column to left": "Añadir columna encima",
+      "Add column to right": "Añadir columna debajo",
+      "Delete column": "Eliminar columna"
+    },
+    "list": {
+      "Unordered": "Desordenada",
+      "Ordered": "Ordenada"
+    },
+    "warning": {
+      "Title": "Título",
+      "Message": "Mensaje"
+    },
+    "code": { "Enter a code": "Escríbe código" },
+    "link": {
+      "Link": "Enlace",
+      "Add a link": "Añadir un enlace",
+      "Couldn't fetch the link data": "No se pudo recuperar la información del enlace",
+      "Couldn't get this link data, try the other one": "No se pudo obtener la información de este enlace, intente con otro",
+      "Wrong response format from the server": "Formato de respuesta incorrecto desde el servidor"
+    },
+    "raw": {
+      "Enter HTML code": "Escribe código HTML"
+    },
+    "quote": { "Quote": "Cita", "Quote's author": "Autor de la Cita" },
+    "stub": {
+      "The block can not be displayed correctly.": "El bloque no pudo ser mostrado correctamente."
+    }
+  },
+  "blockTunes": {
+    "delete": {
+      "Delete": "Eliminar"
+    },
+    "moveUp": {
+      "Move up": "Mover hacia arriba"
+    },
+    "moveDown": {
+      "Move down": "Mover hacia abajo"
+    }
+  }
+}
