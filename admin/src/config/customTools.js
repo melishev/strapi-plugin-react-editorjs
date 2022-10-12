@@ -62,7 +62,7 @@ const customTools = {
     inlineToolbar: true,
     config: {
       quotePlaceholder: "Quote",
-      captionPlaceholder: "Quote`s author",
+      captionPlaceholder: "Quote's author",
     },
   },
   marker: {
