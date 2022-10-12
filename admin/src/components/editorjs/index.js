@@ -36,12 +36,9 @@ const Editor = ({ onChange, name, value }) => {
   };
 
   const handleChange = (api, newData) => {
-    if (!newData.blocks.length) {
-      newData = null;
-      onChange({ target: { name, value: newData } });
-    } else {
-      onChange({ target: { name, value: JSON.stringify(newData) } });
-    }
+    api.saver.save().then((res) => {
+      onChange({ target: { name, value: JSON.stringify(res) } });
+    });
   };
 
   const customImageTool = {
