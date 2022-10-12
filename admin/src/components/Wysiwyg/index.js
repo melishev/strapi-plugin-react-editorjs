@@ -1,12 +1,13 @@
-import React from "react";
+import { Box } from "@strapi/design-system/Box";
+import { Typography } from "@strapi/design-system/Typography";
+import cn from "clsx";
+import { isEmpty } from "lodash";
 import PropTypes from "prop-types";
-import { isEmpty } from 'lodash';
+import React from "react";
+import { useIntl } from "react-intl";
+
 import Editor from "../editorjs";
-import cn from 'classnames';
-import Wrapper from './wrapper';
-import { useIntl } from 'react-intl';
-import { Box } from '@strapi/design-system/Box';
-import { Typography } from '@strapi/design-system/Typography';
+import Wrapper from "./wrapper";
 
 const Wysiwyg = ({
   name,
