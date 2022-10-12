@@ -1,12 +1,14 @@
-import React, { useState, useCallback } from 'react';
-import PropTypes from 'prop-types';
-import EditorJs from 'react-editor-js';
-import requiredTools from './requiredTools';
-import customTools from '../../config/customTools';
+import React, { useState, useCallback } from "react";
+import PropTypes from "prop-types";
+import { createReactEditorJS } from "react-editor-js";
+import requiredTools from "./requiredTools";
+import customTools from "../../config/customTools";
 
-import MediaLibAdapter from '../medialib/adapter'
-import MediaLibComponent from '../medialib/component';
-import {changeFunc, getToggleFunc} from '../medialib/utils';
+import MediaLibAdapter from "../medialib/adapter";
+import MediaLibComponent from "../medialib/component";
+import { changeFunc, getToggleFunc } from "../medialib/utils";
+
+const EditorJS = createReactEditorJS();
 
 const Editor = ({ onChange, name, value }) => {
   const [editorInstance, setEditorInstance] = useState();
@@ -56,6 +58,7 @@ const Editor = ({ onChange, name, value }) => {
     <>
       <div style={{ border: `1px solid rgb(227, 233, 243)`, borderRadius: `2px`, marginTop: `4px` }}>
         <EditorJs
+        <EditorJS
           // data={JSON.parse(value)}
           // enableReInitialize={true}
           onReady={handleReady}
