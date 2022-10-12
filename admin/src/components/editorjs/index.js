@@ -9,7 +9,6 @@ import MediaLibComponent from '../medialib/component';
 import {changeFunc, getToggleFunc} from '../medialib/utils';
 
 const Editor = ({ onChange, name, value }) => {
-
   const [editorInstance, setEditorInstance] = useState();
   const [mediaLibBlockIndex, setMediaLibBlockIndex] = useState(-1);
   const [isMediaLibOpen, setIsMediaLibOpen] = useState(false);
@@ -29,6 +28,22 @@ const Editor = ({ onChange, name, value }) => {
     mediaLibToggleFunc();
   }, [mediaLibBlockIndex, editorInstance]);
 
+  const handleReady = (editor) => {
+    if (value && JSON.parse(value).blocks.length) {
+      editor.blocks.render(JSON.parse(value));
+    }
+    document.querySelector('[data-tool="image"]').remove();
+  };
+
+  const handleChange = (api, newData) => {
+    if (!newData.blocks.length) {
+      newData = null;
+      onChange({ target: { name, value: newData } });
+    } else {
+      onChange({ target: { name, value: JSON.stringify(newData) } });
+    }
+  };
+
   const customImageTool = {
     mediaLib: {
       class: MediaLibAdapter,
@@ -44,22 +59,10 @@ const Editor = ({ onChange, name, value }) => {
         <EditorJs
           // data={JSON.parse(value)}
           // enableReInitialize={true}
-          onReady={(api) => {
-            if(value && JSON.parse(value).blocks.length) {
-              api.blocks.render(JSON.parse(value))
-            }
-            document.querySelector('[data-tool="image"]').remove()
-          }}
-          onChange={(api, newData) => {
-            if (!newData.blocks.length) {
-              newData = null;
-              onChange({ target: { name, value: newData } });
-            } else {
-              onChange({ target: { name, value: JSON.stringify(newData) } });
-            }
-          }}
-          tools={{...requiredTools, ...customTools, ...customImageTool}}
-          instanceRef={instance => setEditorInstance(instance)}
+          onReady={handleReady}
+          onChange={handleChange}
+          tools={{ ...requiredTools, ...customTools, ...customImageTool }}
+          instanceRef={(instance) => setEditorInstance(instance)}
         />
       </div>
       <MediaLibComponent
