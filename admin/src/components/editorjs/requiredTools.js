@@ -4,6 +4,7 @@ import { auth } from '@strapi/helper-plugin';
 
 // Plugins for Editor.js
 import Image from '@editorjs/image'
+import Video from "@weekwood/editorjs-video";
 
 const requiredTools = {
   image: {
@@ -33,6 +34,41 @@ const requiredTools = {
 
           return data
         },
+      }
+    }
+  },
+  video: {
+    class: Video,
+    config: {
+      field: "files.video",
+      additionalRequestData: {
+        data: JSON.stringify({})
+      },
+      additionalRequestHeaders: {
+        "Authorization": `Bearer ${auth.getToken()}`
+      },
+      endpoints: {
+        byUrl: `/api/${PluginId}/video/byUrl`,
+      },
+      uploader: {
+        async uploadByFile(file) {
+          const formData = new FormData();
+          formData.append("data", JSON.stringify({}));
+          formData.append("files.video", file);
+
+          const { data } = await axios.post(`/api/${PluginId}/video/byFile`, formData, {
+            headers: {
+              "Authorization": `Bearer ${auth.getToken()}`
+            }
+          });
+
+          return data
+        },
+      },
+      // https://github.com/weekwood/editorjs-video/issues/1#issuecomment-984866387
+      player: {
+        controls: true,
+        autoplay: false
       }
     }
   }

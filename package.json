@@ -28,6 +28,7 @@
     "@editorjs/raw": "2.3.0",
     "@editorjs/table": "2.0.1",
     "@editorjs/warning": "1.2.0",
+    "@weekwood/editorjs-video": "^1.0.2",
     "classnames": "^2.3.1",
     "get-file-object-from-local-path": "1.0.2",
     "open-graph-scraper": "4.9.2",

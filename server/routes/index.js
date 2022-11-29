@@ -27,6 +27,22 @@ module.exports = {
           auth: false
         },
       },
+      {
+        method: "POST",
+        path: "/video/byFile",
+        handler: "editorjs.byFile",
+        config: {
+          auth: false
+        },
+      },
+      {
+        method: "POST",
+        path: "/video/byUrl",
+        handler: "editorjs.byURL",
+        config: {
+          auth: false
+        },
+      },
     ]
   }
 }
