@@ -12,6 +12,15 @@ module.exports = {
         },
       },
       {
+        method: "GET",
+        path: "/config",
+        handler: "editorjs.config",
+        config: {
+          "description": "Get plugin's config",
+          auth: false
+        },
+      },
+      {
         method: "POST",
         path: "/image/byFile",
         handler: "editorjs.byFile",

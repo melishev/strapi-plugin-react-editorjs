@@ -1,6 +1,10 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback, useEffect, useMemo } from 'react';
 import PropTypes from 'prop-types';
 import EditorJs from 'react-editor-js';
+import { Loader } from "@strapi/design-system/Loader";
+import { Flex } from '@strapi/design-system/Flex';
+import axios from 'axios';
+import PluginId from '../../pluginId'
 import requiredTools from './requiredTools';
 import customTools from '../../config/customTools';
 
@@ -9,8 +13,9 @@ import MediaLibComponent from '../medialib/component';
 import {changeFunc, getToggleFunc} from '../medialib/utils';
 
 const Editor = ({ onChange, name, value }) => {
-
   const [editorInstance, setEditorInstance] = useState();
+  const [config, setConfig] = useState();
+  const [isLoadingConfig, setIsLoadingConfig] = useState(true);
   const [mediaLibBlockIndex, setMediaLibBlockIndex] = useState(-1);
   const [isMediaLibOpen, setIsMediaLibOpen] = useState(false);
 
@@ -29,13 +34,45 @@ const Editor = ({ onChange, name, value }) => {
     mediaLibToggleFunc();
   }, [mediaLibBlockIndex, editorInstance]);
 
-  const customImageTool = {
+  const customImageTool = useMemo(() => ({
     mediaLib: {
       class: MediaLibAdapter,
       config: {
         mediaLibToggleFunc
       }
     }
+  }), [MediaLibAdapter, mediaLibToggleFunc]);
+
+  const tools = useMemo(() => {
+    let activeTools = {
+      ...requiredTools,
+      ...customTools,
+      ...customImageTool
+    };
+
+    if (config && config.enabledTools) {
+      activeTools = Object.fromEntries(
+       Object.entries(activeTools)
+        .filter(([key]) => config.enabledTools.includes(key))
+        .sort(([keyA], [keyB]) => config.enabledTools.indexOf(keyA) - config.enabledTools.indexOf(keyB))
+      )
+    }
+
+    return activeTools;
+  }, [config, requiredTools, customImageTool, customTools]);
+
+  useEffect(() => {
+    axios.get(`/api/${PluginId}/config`)
+      .then(({ data: config }) => config && setConfig(config))
+      .finally(() => setIsLoadingConfig(false));
+  }, [setConfig]);
+
+  if (isLoadingConfig) {
+    return (
+      <Flex>
+        <Loader />
+      </Flex>
+    );
   }
 
   return (
@@ -58,7 +95,7 @@ const Editor = ({ onChange, name, value }) => {
               onChange({ target: { name, value: JSON.stringify(newData) } });
             }
           }}
-          tools={{...requiredTools, ...customTools, ...customImageTool}}
+          tools={tools}
           instanceRef={instance => setEditorInstance(instance)}
         />
       </div>

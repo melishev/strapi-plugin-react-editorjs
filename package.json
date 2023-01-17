@@ -36,6 +36,10 @@
   "devDependencies": {
     "@semantic-release/changelog": "^6.0.1",
     "@semantic-release/git": "^10.0.1",
+    "@strapi/utils": "^4.5.2",
+    "@strapi/helper-plugin": "^4.5.2",
+    "@strapi/design-system": "^4.5.2",
+    "axios": "^1.2.2",
     "cz-conventional-changelog": "^3.3.0",
     "semantic-release": "^19.0.2"
   },

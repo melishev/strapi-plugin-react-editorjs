@@ -98,7 +98,10 @@ module.exports = ({ env }) => ({
   // ...
   'editorjs': {
     enabled: true,
-    resolve: './src/plugins/strapi-plugin-react-editorjs'
+    resolve: './src/plugins/strapi-plugin-react-editorjs',
+    config: {
+      enabledTools: ['header', 'list', 'quote', 'mediaLib']
+    }
   },
   // ...
 })
