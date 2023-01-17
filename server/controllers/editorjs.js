@@ -6,6 +6,13 @@ const path = require('path');
 const { LocalFileData } = require('get-file-object-from-local-path');
 
 module.exports = ({ strapi }) => ({
+  config: async (ctx) => {
+    const config = await strapi
+      .store({ type: 'plugin', name: 'editorjs' })
+      .get({ key: 'config' });
+
+    return ctx.send(config);
+  },
 
   link: async (ctx) => {
     const result = await new Promise((resolve) => {
