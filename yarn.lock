@@ -958,7 +958,7 @@ chardet@^0.7.0:
   version "0.7.0"
   resolved "https://registry.npmjs.org/chardet/-/chardet-0.7.0.tgz"
 
-chardet@^1.3.0:
+chardet@^1.4.0:
   version "1.5.1"
   resolved "https://registry.yarnpkg.com/chardet/-/chardet-1.5.1.tgz#2a15770a46ce15e25a99f2741c949f43f9925dd5"
   integrity sha512-0XMOtA52igKDOIfvJZJ6v0+J9yMF3IuYyEa5oFUxBXA01G6mwCNKpul3bgbFf7lmZuqwN/oyg/zQ1cGS7NyJkQ==
@@ -975,7 +975,7 @@ cheerio-select@^2.1.0:
     domhandler "^5.0.3"
     domutils "^3.0.1"
 
-cheerio@^1.0.0-rc.10:
+cheerio@^1.0.0-rc.11:
   version "1.0.0-rc.12"
   resolved "https://registry.yarnpkg.com/cheerio/-/cheerio-1.0.0-rc.12.tgz#788bf7466506b1c6bf5fae51d24a2c4d62e47683"
   integrity sha512-VqR8m68vM46BNnuZ5NtnGBKIE/DfN0cRIzg9n40EIq9NOv90ayxLBXA8fXC5gquFRGJSTRqBq25Jt2ECLR431Q==
@@ -1795,7 +1795,7 @@ globby@^11.0.0, globby@^11.0.1:
     merge2 "^1.4.1"
     slash "^3.0.0"
 
-got@^11.8.2:
+got@^11.8.5:
   version "11.8.6"
   resolved "https://registry.yarnpkg.com/got/-/got-11.8.6.tgz#276e827ead8772eddbcfc97170590b841823233a"
   integrity sha512-6tfZ91bOr7bOXnK7PRDCGBLa1H4U080YHNaAQ2KsMGlLEzRbk44nsZF2E1IeRc3vtJHPVbKCYgdFbaGO2ljd8g==
@@ -2979,16 +2979,16 @@ onetime@^6.0.0:
   dependencies:
     mimic-fn "^4.0.0"
 
-open-graph-scraper@4.9.2:
-  version "4.9.2"
-  resolved "https://registry.yarnpkg.com/open-graph-scraper/-/open-graph-scraper-4.9.2.tgz#0e2c377f241b89fb00f24492da823ed05f44cfc0"
-  integrity sha512-OfqtHRd4UFU3PgHMlNBNkovDrtfuSCExTG0+OdFgvF8TfabnFJ3gyUMliVNeD3cobOZcIUhV8jRfKMg6eCDBmA==
+open-graph-scraper@4.11.1:
+  version "4.11.1"
+  resolved "https://registry.yarnpkg.com/open-graph-scraper/-/open-graph-scraper-4.11.1.tgz#cf52bb8f5703840a6723e8a8911ddbf1628752b2"
+  integrity sha512-cGffZ6MtlEj6e46MqEnRU0qf+OmQDG3YTZOaEI15lhZMGAoUbu0bUsDFaq4QOz3lc9DHC7JprQeyJkTNqs7HjA==
   dependencies:
-    chardet "^1.3.0"
-    cheerio "^1.0.0-rc.10"
-    got "^11.8.2"
+    chardet "^1.4.0"
+    cheerio "^1.0.0-rc.11"
+    got "^11.8.5"
     iconv-lite "^0.6.3"
-    validator "^13.6.0"
+    validator "^13.7.0"
 
 opener@^1.5.2:
   version "1.5.2"
@@ -3978,7 +3978,7 @@ validate-npm-package-name@^4.0.0:
   dependencies:
     builtins "^5.0.0"
 
-validator@^13.6.0:
+validator@^13.7.0:
   version "13.9.0"
   resolved "https://registry.yarnpkg.com/validator/-/validator-13.9.0.tgz#33e7b85b604f3bbce9bb1a05d5c3e22e1c2ff855"
   integrity sha512-B+dGG8U3fdtM0/aNK4/X8CXq/EcxU2WPrPEkJGslb47qyHsxmbggTWK0yEA4qnYVNF+nxNlN88o14hIcPmSIEA==
