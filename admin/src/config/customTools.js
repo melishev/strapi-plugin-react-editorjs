@@ -15,7 +15,17 @@ import Delimiter from '@editorjs/delimiter'
 import InlineCode from '@editorjs/inline-code'
 
 const customTools = {
-  embed: Embed,
+  embed: {
+    class: Embed,
+    config: {
+      services: {
+        instagram: true,
+        youtube: true,
+        codepen: true,
+        twitter: true,
+      }
+    }
+  },
   table: {
     class: Table,
     inlineToolbar: true,
