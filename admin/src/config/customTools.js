@@ -64,6 +64,7 @@ const customTools = {
   delimiter: Delimiter,
   inlineCode: InlineCode,
   hyperlink: {
+    inlineToolbar: true,
     class: Hyperlink,
     config: {
       shortcut: "CMD+L",
@@ -73,6 +74,7 @@ const customTools = {
       validate: false,
     },
   },
+  link: function () {},
 };
 
 export default customTools;
