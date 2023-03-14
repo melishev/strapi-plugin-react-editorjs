@@ -1,18 +1,19 @@
-import PluginId from '../pluginId'
+import PluginId from "../pluginId";
 
-import Embed from '@editorjs/embed'
-import Table from '@editorjs/table'
-import List from '@editorjs/list'
-import Warning from '@editorjs/warning'
-import Code from '@editorjs/code'
-import LinkTool from '@editorjs/link'
-import Raw from '@editorjs/raw'
-import Header from '@editorjs/header'
-import Quote from '@editorjs/quote'
-import Marker from '@editorjs/marker'
-import CheckList from '@editorjs/checklist'
-import Delimiter from '@editorjs/delimiter'
-import InlineCode from '@editorjs/inline-code'
+import Embed from "@editorjs/embed";
+import Table from "@editorjs/table";
+import List from "@editorjs/list";
+import Warning from "@editorjs/warning";
+import Code from "@editorjs/code";
+import LinkTool from "@editorjs/link";
+import Raw from "@editorjs/raw";
+import Header from "@editorjs/header";
+import Quote from "@editorjs/quote";
+import Marker from "@editorjs/marker";
+import CheckList from "@editorjs/checklist";
+import Delimiter from "@editorjs/delimiter";
+import InlineCode from "@editorjs/inline-code";
+import Hyperlink from "editorjs-hyperlink";
 
 const customTools = {
   embed: Embed,
@@ -28,17 +29,12 @@ const customTools = {
     class: Warning,
     inlineToolbar: true,
     config: {
-      titlePlaceholder: 'Title',
-      messagePlaceholder: 'Message',
+      titlePlaceholder: "Title",
+      messagePlaceholder: "Message",
     },
   },
   code: Code,
-  LinkTool: {
-    class: LinkTool,
-    config: {
-      endpoint: `/api/${PluginId}/link`,
-    },
-  },
+
   raw: {
     class: Raw,
     inlineToolbar: true,
@@ -46,13 +42,18 @@ const customTools = {
   header: {
     class: Header,
     inlineToolbar: true,
+    config: {
+      placeholder: "Enter a header",
+      levels: [2, 3],
+      defaultLevel: 2,
+    },
   },
   quote: {
     class: Quote,
     inlineToolbar: true,
     config: {
-      quotePlaceholder: 'Quote',
-      captionPlaceholder: 'Quote`s author',
+      quotePlaceholder: "Quote",
+      captionPlaceholder: "Quote`s author",
     },
   },
   marker: {
@@ -65,6 +66,16 @@ const customTools = {
   },
   delimiter: Delimiter,
   inlineCode: InlineCode,
-}
+  hyperlink: {
+    class: Hyperlink,
+    config: {
+      shortcut: "CMD+L",
+      target: "_blank",
+      availableTargets: ["_blank"],
+      availableRels: ["nofollow"],
+      validate: false,
+    },
+  },
+};
 
-export default customTools
+export default customTools;
