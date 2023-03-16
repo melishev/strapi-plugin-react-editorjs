@@ -31,7 +31,8 @@
     "classnames": "^2.3.1",
     "get-file-object-from-local-path": "1.0.2",
     "open-graph-scraper": "4.9.2",
-    "react-editor-js": "1.10.0"
+    "react-editor-js": "1.10.0",
+    "react-player": "2.12.0"
   },
   "devDependencies": {
     "@semantic-release/changelog": "^6.0.1",
