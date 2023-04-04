@@ -3,8 +3,8 @@ import PluginId from '../pluginId'
 import Embed from '@editorjs/embed'
 import Table from '@editorjs/table'
 import List from '@editorjs/list'
-import Warning from '@editorjs/warning'
-import Code from '@editorjs/code'
+// import Warning from '@editorjs/warning'
+import ToggleBlock from 'editorjs-toggle-block'
 import LinkTool from '@editorjs/link'
 import Raw from '@editorjs/raw'
 import Header from '@editorjs/header'
@@ -24,15 +24,14 @@ const customTools = {
     class: List,
     inlineToolbar: true,
   },
-  warning: {
-    class: Warning,
-    inlineToolbar: true,
-    config: {
-      titlePlaceholder: 'Title',
-      messagePlaceholder: 'Message',
-    },
-  },
-  code: Code,
+  // warning: {
+  //   class: Warning,
+  //   inlineToolbar: true,
+  //   config: {
+  //     titlePlaceholder: 'Title',
+  //     messagePlaceholder: 'Message',
+  //   },
+  // },
   LinkTool: {
     class: LinkTool,
     config: {
@@ -41,6 +40,10 @@ const customTools = {
   },
   raw: {
     class: Raw,
+    inlineToolbar: true,
+  },
+  toggleBlock: {
+    class: ToggleBlock,
     inlineToolbar: true,
   },
   header: {

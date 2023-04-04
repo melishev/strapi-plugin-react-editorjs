@@ -27,7 +27,7 @@
     "@editorjs/quote": "2.4.0",
     "@editorjs/raw": "2.3.0",
     "@editorjs/table": "2.0.1",
-    "@editorjs/warning": "1.2.0",
+    "editorjs-toggle-block": "^0.3.10",
     "classnames": "^2.3.1",
     "get-file-object-from-local-path": "1.0.2",
     "open-graph-scraper": "4.9.2",
@@ -66,10 +66,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/melishev/strapi-plugin-editor-js.git"
+    "url": "https://github.com/pcodk/strapi-plugin-editor-js.git"
   },
   "bugs": {
-    "url": "https://github.com/melishev/strapi-plugin-editor-js/issues"
+    "url": "https://github.com/pcodk/strapi-plugin-editor-js/issues"
   },
   "keywords": [
     "strapi",
