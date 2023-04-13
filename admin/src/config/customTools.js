@@ -3,7 +3,7 @@ import PluginId from '../pluginId'
 import Embed from '@editorjs/embed'
 import Table from '@editorjs/table'
 import List from '@editorjs/list'
-// import Warning from '@editorjs/warning'
+import Warning from '@editorjs/warning'
 import ToggleBlock from 'editorjs-toggle-block'
 import LinkTool from '@editorjs/link'
 import Raw from '@editorjs/raw'
@@ -24,14 +24,18 @@ const customTools = {
     class: List,
     inlineToolbar: true,
   },
-  // warning: {
-  //   class: Warning,
-  //   inlineToolbar: true,
-  //   config: {
-  //     titlePlaceholder: 'Title',
-  //     messagePlaceholder: 'Message',
-  //   },
-  // },
+  Math: {
+    class: EJLaTeX,
+    shortcut: 'CMD+SHIFT+M'
+  },
+  warning: {
+    class: Warning,
+    inlineToolbar: true,
+    config: {
+      titlePlaceholder: 'Title',
+      messagePlaceholder: 'Message',
+    },
+  },
   LinkTool: {
     class: LinkTool,
     config: {
