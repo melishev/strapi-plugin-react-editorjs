@@ -36,7 +36,7 @@ const customTools = {
   LinkTool: {
     class: LinkTool,
     config: {
-      endpoint: `/api/${PluginId}/link`,
+      endpoint: `${process.env.STRAPI_ADMIN_BACKEND_URL}/${PluginId}/link`,
     },
   },
   raw: {

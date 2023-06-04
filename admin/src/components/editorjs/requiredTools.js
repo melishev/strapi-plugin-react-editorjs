@@ -17,7 +17,7 @@ const requiredTools = {
         "Authorization": `Bearer ${auth.getToken()}`
       },
       endpoints: {
-        byUrl: `/api/${PluginId}/image/byUrl`,
+        byUrl: `${process.env.STRAPI_ADMIN_BACKEND_URL}/${PluginId}/image/byUrl`,
       },
       uploader: {
         async uploadByFile(file) {
@@ -25,7 +25,7 @@ const requiredTools = {
           formData.append("data", JSON.stringify({}));
           formData.append("files.image", file);
 
-          const {data} = await axios.post(`/api/${PluginId}/image/byFile`, formData, {
+          const {data} = await axios.post(`${process.env.STRAPI_ADMIN_BACKEND_URL}/${PluginId}/image/byFile`, formData, {
             headers: {
               "Authorization": `Bearer ${auth.getToken()}`
             }
