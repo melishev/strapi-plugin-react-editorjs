@@ -14,5 +14,23 @@ module.exports = [
         path: "/image/byUrl",
         handler: "editorjs.byURL",
     },
+    {
+        method: "GET",
+        path: "/toolpackValid",
+        handler: "editorjs.checkToolpackValid",
+    },
+    {
+        method: "GET",
+        path: "/toolpack",
+        handler: "editorjs.serveToolpack",
+        config: {
+            auth: false
+        }
+    },
+    {
+        method: "GET",
+        path: "/config",
+        handler: "editorjs.config",
+    },
 ]
 

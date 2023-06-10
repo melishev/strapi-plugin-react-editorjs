@@ -1,7 +1,7 @@
 'use strict';
 
-const editorjs = require('./editorjs');
+const toolpack = require('./toolpack');
 
 module.exports = {
-  editorjs
+  toolpack
 };

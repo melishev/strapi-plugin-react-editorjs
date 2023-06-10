@@ -13,6 +13,7 @@ import Marker from '@editorjs/marker'
 import CheckList from '@editorjs/checklist'
 import Delimiter from '@editorjs/delimiter'
 import InlineCode from '@editorjs/inline-code'
+import { MusicBlock } from '../../../../../editorjs/editorjs-music/dist/index.mjs'
 
 const customTools = {
   embed: Embed,
@@ -64,7 +65,7 @@ const customTools = {
     inlineToolbar: true,
   },
   delimiter: Delimiter,
-  inlineCode: InlineCode,
+  inlineCode: InlineCode
 }
 
 export default customTools

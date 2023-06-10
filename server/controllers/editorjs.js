@@ -4,6 +4,8 @@ const axios = require('axios');
 const fs = require('fs');
 const path = require('path');
 const { LocalFileData } = require('get-file-object-from-local-path');
+const pluginId = require('../../admin/src/pluginId');
+
 
 module.exports = ({ strapi }) => ({
 
@@ -86,5 +88,50 @@ module.exports = ({ strapi }) => ({
         message: e.message
       }, 500)
     }
+  },
+
+  serveToolpack: async (ctx) => {
+
+    const toolpackService = strapi.plugin(pluginId).service('toolpack');
+    const toolpackPackageName = toolpackService.getToolpackPackageName();
+
+    // try and load from the config package
+    let toolpackFilePath = toolpackService.tryLoadFromPackage(toolpackPackageName);
+
+    // if it has failed, and it wasn't the default, try the default
+    if (toolpackFilePath === undefined && toolpackPackageName !== DEFAULT_TOOLPACK_PACKAGE) {
+        toolpackFilePath = toolpackService.tryLoadFromPackage(DEFAULT_TOOLPACK_PACKAGE);
+    }
+
+    // if it has still failed, log and return an error
+    if (toolpackFilePath === undefined) {
+        ctx.response.status = 400;
+        return;
+    }
+
+    // otherwise send the toolpack file
+    const fileStream = fs.createReadStream(toolpackFilePath)
+    ctx.response.body = fileStream;
+    ctx.response.type = 'js';
+    return;
+  },
+  checkToolpackValid: async (ctx) => {
+
+    const toolpackService = strapi.plugin(pluginId).service('toolpack');
+    const toolpackPackageName = toolpackService.getToolpackPackageName();
+
+    const ret = toolpackService.packageIsValid(toolpackPackageName);
+
+    if (ret.valid) {
+        ctx.response.status = 200;
+    } else {
+        ctx.response.status = 400;
+        ctx.response.body = ret.reason;
+    }
+
+  },
+  config: async (ctx) => {
+    const config = strapi.config.get(`plugin.${pluginId}`);
+    ctx.response.body = config;
   }
 });
