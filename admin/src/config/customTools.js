@@ -14,6 +14,8 @@ import CheckList from '@editorjs/checklist'
 import Delimiter from '@editorjs/delimiter'
 import InlineCode from '@editorjs/inline-code'
 
+import { auth } from '@strapi/helper-plugin';
+
 const customTools = {
   embed: Embed,
   table: {
@@ -36,7 +38,10 @@ const customTools = {
   LinkTool: {
     class: LinkTool,
     config: {
-      endpoint: `/api/${PluginId}/link`,
+      endpoint: `${process.env.STRAPI_ADMIN_BACKEND_URL}/${PluginId}/link`,
+      headers: {
+        "Authorization": `Bearer ${auth.getToken()}`
+      }
     },
   },
   raw: {
