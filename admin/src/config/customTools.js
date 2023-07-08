@@ -15,6 +15,8 @@ import Delimiter from '@editorjs/delimiter'
 import InlineCode from '@editorjs/inline-code'
 import { MusicBlock } from '../../../../../editorjs/editorjs-music/dist/index.mjs'
 
+import { auth } from '@strapi/helper-plugin';
+
 const customTools = {
   embed: Embed,
   table: {
@@ -38,6 +40,9 @@ const customTools = {
     class: LinkTool,
     config: {
       endpoint: `${process.env.STRAPI_ADMIN_BACKEND_URL}/${PluginId}/link`,
+      headers: {
+        "Authorization": `Bearer ${auth.getToken()}`
+      }
     },
   },
   raw: {
