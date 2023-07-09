@@ -4,17 +4,18 @@ import { createReactEditorJS } from 'react-editor-js'
 import MediaLibComponent from '../medialib/component';
 import {changeFunc, getToggleFunc} from '../medialib/utils';
 
-import { useFetchClient } from '@strapi/helper-plugin';
+import { useFetchClient, auth } from '@strapi/helper-plugin';
 import { Loader } from '@strapi/design-system';
 import { Typography as Typ } from '@strapi/design-system';
 import { Flex } from '@strapi/design-system';
 import { EmptyStateLayout } from '@strapi/design-system';
+import pluginId from '../../pluginId';
 
 const EditorJs = createReactEditorJS();
 
 const Editor = ({ onChange, name, value }) => {
 
-    const fetch = useFetchClient();
+    const fetchClient = useFetchClient();
 
     const [editorInstance, setEditorInstance] = useState();
     const [mediaLibBlockIndex, setMediaLibBlockIndex] = useState(-1);
@@ -25,7 +26,9 @@ const Editor = ({ onChange, name, value }) => {
 
     const createEjsObject = () => {
         const ejs = {
-            pluginEndpoint: `${strapi.backendURL}/editorjs`,
+            pluginEndpoint: `${strapi.backendURL}/${pluginId}`,
+            authToken: auth.getToken(),
+            fetchClient,
             mediaLib: {
                 toggle: mediaLibToggleFunc
             }
@@ -36,8 +39,8 @@ const Editor = ({ onChange, name, value }) => {
     useEffect(() => {
         // check if the toolpack on the server is valid
         
-        fetch.get(
-            `${strapi.backendURL}/editorjs/toolpackValid`, 
+        fetchClient.get(
+            `${strapi.backendURL}/${pluginId}/toolpackValid`, 
             // we want to check the response rather than just throw
             {validateStatus: () => true}
         )
@@ -45,11 +48,11 @@ const Editor = ({ onChange, name, value }) => {
 
                 // if it's valid, load the toolpack
                 if (resp.status === 200) {
-                    return import(/*webpackIgnore: true*/`${strapi.backendURL}/editorjs/toolpack`);
+                    return import(/*webpackIgnore: true*/`${strapi.backendURL}/${pluginId}/toolpack`);
 
                 // if it's not valid, the reason is in the body
                 } else if (resp.status === 400) {
-                    throw new Error(resp.body)
+                    throw new Error(resp.data)
                 
                 // for something unexpected, then throw an unexpected error
                 } else {
@@ -102,12 +105,6 @@ const Editor = ({ onChange, name, value }) => {
                 content="Failed to load Toolpack" 
                 action={<Typ textAlign="center" variant="pi">{toolpackError}</Typ>}
             />
-
-{/* 
-            <Flex alignItems='center' justifyContent='center' direction='column' paddingTop={6} paddingBottom={6}>
-                <Typ variant="epsilon">Error Loading Toolpack.</Typ>
-                <Typ variant="pi">{toolpackError}</Typ>
-            </Flex> */}
         </>
     } else if (tools === null) {
         return <>

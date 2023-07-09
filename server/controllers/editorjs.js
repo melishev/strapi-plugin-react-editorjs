@@ -6,7 +6,6 @@ const path = require('path');
 const { LocalFileData } = require('get-file-object-from-local-path');
 const pluginId = require('../../admin/src/pluginId');
 
-
 module.exports = ({ strapi }) => ({
 
   link: async (ctx) => {

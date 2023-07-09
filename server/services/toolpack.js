@@ -5,8 +5,6 @@ const path = require('path');
 
 const pluginId = require('../../admin/src/pluginId');
 
-const DEFAULT_TOOLPACK_PACKAGE = '@ges-dev/editorjs-default-toolpack';
-
 /**
  * editorjs.js service
  *
@@ -22,13 +20,9 @@ module.exports = (
     class ToolpackService {
 
         getToolpackPackageName() {
-
             /** @type {import("../../types/Config").Config} */
             const config = strapi.config.get(`plugin.${pluginId}`);
-
-            return config.useDefaultTools ? 
-                DEFAULT_TOOLPACK_PACKAGE : 
-                config.toolpack ?? DEFAULT_TOOLPACK_PACKAGE
+            return config.toolpack;
         }
 
         resolvePackage(packageName) {

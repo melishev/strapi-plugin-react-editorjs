@@ -1,6 +1,6 @@
 module.exports = {
   default: {
-    useDefaultTools: true
+    toolpack: 'editorjs-default-toolpack'
   },
   validator(config) {
   },
