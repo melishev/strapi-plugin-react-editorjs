@@ -1,32 +1,36 @@
-module.exports = {
-  "content-api": {
-    type: "content-api",
-    routes: [
-      {
+module.exports = [
+    {
         method: "GET",
         path: "/link",
         handler: "editorjs.link",
-        config: {
-          "description": "Get a URL link",
-          auth: false
-        },
-      },
-      {
+    },
+    {
         method: "POST",
         path: "/image/byFile",
         handler: "editorjs.byFile",
-        config: {
-          auth: false
-        },
-      },
-      {
+    },
+    {
         method: "POST",
         path: "/image/byUrl",
         handler: "editorjs.byURL",
+    },
+    {
+        method: "GET",
+        path: "/toolpackValid",
+        handler: "editorjs.checkToolpackValid",
+    },
+    {
+        method: "GET",
+        path: "/toolpack",
+        handler: "editorjs.serveToolpack",
         config: {
-          auth: false
-        },
-      },
-    ]
-  }
-}
+            auth: false
+        }
+    },
+    {
+        method: "GET",
+        path: "/config",
+        handler: "editorjs.config",
+    },
+]
+
